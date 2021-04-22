@@ -1,0 +1,96 @@
+.navega{
+    background-color:#085C6C;
+color: white;
+}
+#principal{
+    font-size: 20px;
+}
+.letrasNav{
+    color:white;
+    font-family:Century Ghotic;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.letrasNav:hover{
+    color:#808B96 ;
+}
+.buscador{
+    margin-bottom: -5px;
+}
+.up{/*para reparar el navbar*/
+	position: relative;
+	top: -15px;
+}
+.mover_buscador{/*para reparar el navbar*/
+	position: relative;
+	right: 90px;
+	top: 20px;
+}
+.mover_boton_buscador{/*para reparar el navbar*/
+	position: relative;
+	top: -18px;
+	left: 120px;
+}
+/*aqui termina el navbar*/
+
+.dimensiones_imagen{
+	width: 1300px;
+	height: 500px;
+	position: relative;
+	top: -23px;
+}
+.texto_destacados{
+	color: white;
+}
+.dimensiones_imagen1_destacado{
+	width: 500px;
+	height: 500px;
+	position: relative;
+	left: 33px;
+	top: 10px;
+}
+.dimensiones_imagen2_destacado{
+	width: 600px;
+	height: 220px;
+	position: relative;
+	left: 80px;
+}
+.dimensiones_imagen3_destacado{
+	width: 600px;
+	height: 220px;
+	position: absolute;
+	left: 584px;
+	top: 349px;
+}
+.nose{
+	position: relative;
+}
+.fondo1{
+	background-color: blue;
+}
+.fondo2{
+	background-color: white;
+}
+.pre-card{
+	width: 18rem;
+}
+.marco{
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    transition: 0.1s;
+}
+
+.marco:hover {
+    box-shadow: 0 0 10px 10px rgba(0, 140, 186, 0.9);
+    /*si quieren cambiar el color del marco aqui*/
+}
+.quitar_efecto_link{
+	text-decoration: none;
+	color: gray;
+}
+.quitar_efecto_link:hover{
+	color: red;
+}
