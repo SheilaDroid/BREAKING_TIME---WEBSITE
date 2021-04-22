@@ -1,0 +1,57 @@
+
+#principal{
+    font-size: 20px;
+}
+.buscador{
+    margin-bottom: -5px;
+}
+.up{/*para reparar el navbar*/
+	position: relative;
+	top: -15px;
+}
+.mover_buscador{/*para reparar el navbar*/
+	position: relative;
+	right: 90px;
+	top: 20px;
+}
+.mover_boton_buscador{/*para reparar el navbar*/
+	position: relative;
+	top: -18px;
+	left: 120px;
+}
+/*aqui termina el navbar*/
+
+#descripcion{
+	font-size: 1.5em;
+	font-family: 'Century Ghotic';
+	text-align: center;
+	color: gray;
+}
+
+.container-articulos{
+	background-color: #F0B27A;
+}
+
+.white_titulo{
+    text-align: center;
+    color: white;
+    font-family: Century Ghotic;
+}
+
+.titulo_tarjetas{
+    color: tomato;
+   
+   
+    font-size: 2em;
+}
+
+.color_boton{
+    background-color: tomato;
+    border:none
+}
+
+.color_boton:hover{
+    border-color:  tomato;
+   background-color:#E74C3C;
+ 
+}
