@@ -55,3 +55,19 @@
    background-color:#E74C3C;
  
 }
+#fondo{
+	background-image: url(imagenes/stylelife_img/fondo.jpg);
+}
+
+p, ul{
+	font-size: 1em;
+	font-family:Century Ghotic;
+	margin-left: 2em;
+}
+.titulos{
+	color: gray;
+	text-align: center;
+}
+.texto_importante{
+	text-align: center;
+}
