@@ -34,6 +34,16 @@ color: white;
 }
 /*aqui termina el navbar*/
 
+#descripcion{
+	font-size: 1.5em;
+	font-family: 'Century Ghotic';
+	text-align: center;
+	color: gray;
+}
+
+.container-articulos{
+	background-color: #F0B27A;
+}
 .dimensiones_imagen{
 	width: 1300px;
 	height: 500px;
