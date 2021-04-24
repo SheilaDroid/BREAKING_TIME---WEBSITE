@@ -71,3 +71,11 @@ p, ul{
 .texto_importante{
 	text-align: center;
 }
+.margen-banner{
+	margin-top: -10px; margin-bottom: 10px;
+	max-width: 100%; height:auto
+}
+
+.fondo-blanco{
+	background-color: white;
+}

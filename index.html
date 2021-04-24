@@ -105,14 +105,17 @@
 			<div class="row espacio-1">
 				<div class="col-md-4">
 					<ul class="caption-style-1">
-						<li> <img src="imagenes/d1.jpg" class="img-fluid" alt="Responsive">
-							<div class="caption">
-								<div class="blur"></div>
-								<div class="caption-text">
-									<h1>NINJA GAIDEN:MASTER COLLECTION</h1>
-									<p>Ninja Gaiden lanzará una trilogía en un título </p>
+						<li>
+							<a href="./categoria/videojuego/articulo2.html"> <img src="imagenes/d1.jpg"
+									class="img-fluid" alt="Responsive">
+								<div class="caption">
+									<div class="blur"></div>
+									<div class="caption-text">
+										<h1>NINJA GAIDEN:MASTER COLLECTION</h1>
+										<p>Ninja Gaiden lanzará una trilogía en un título </p>
+									</div>
 								</div>
-							</div>
+							</a>
 						</li>
 					</ul>
 				</div>
@@ -134,7 +137,8 @@
 				</div>
 				<div class="col-md-4">
 					<ul class="caption-style-1">
-						<li> <img src="imagenes/d3.jpg" class="img-fluid" alt="Responsive">
+						<li> 
+							<a href="./categoria/hacking/articulo2.html"><img src="imagenes/d3.jpg" class="img-fluid" alt="Responsive">
 							<div class="caption">
 								<div class="blur"></div>
 								<div class="caption-text">
@@ -143,6 +147,7 @@
 										Facebook, te invito a leer estos sencillos métodos...</p>
 								</div>
 							</div>
+						</a>
 						</li>
 					</ul>
 				</div>
@@ -151,7 +156,7 @@
 
 	<!--SECCION "Recientes"-->
 	<section>
-		<div class="container container-fluidwidth: 100%" style="margin-top:1cm;">
+		<div class="container container-fluidwidth: 100% margen-arriba">
 			<h3 id="recientes">Recientes</h3>
 			<!--Primer articulo-->
 			<hr>
@@ -162,7 +167,9 @@
 						a la acción frenética de la saga, un repaso a técnicas, armas, habilidades y situaciones a las
 						que se enfrentará Ryu Hayabusa en esta colección remasterizada de la trilogía, que se pondrá a
 						la venta el 10 de junio en PS4, Xbox One, Nintendo Switch y PC. </p>
-					<button type="button" class="btn btn-success" id="btn_semana">Ver más</button>
+					<a href="./categoria/videojuego/articulo2.html">
+						<button type="button" class="btn btn-success" id="btn_semana">Ver más</button>
+					</a>
 				</div>
 				<div class="col-md-6">
 					<img src="./imagenes/d1.jpg" class="img-fluid" alt="img-thumbnail">
@@ -184,7 +191,9 @@
 						aquellos de hace cinco años. Todo esto gracias a la carrera por construir procesadores con una
 						litografía que permite que los transistores que los componen sean minúsculos.
 					</p>
-					<button type="button" class="btn btn-success" id="btn_semana">Ver más</button>
+					<a href="./categoria/computación/mediatek-noticia.html">
+						<button type="button" class="btn btn-success" id="btn_semana">Ver más</button>
+					</a>
 				</div>
 				<div class="col-md-6">
 					<img src="./imagenes/mediatek-noticia.jpg" class="img-fluid" alt="img-thumbnail">
@@ -224,24 +233,24 @@
 	<section>
 		<hr>
 		<div class="container-fluid contenedor1" id="con_semana">
-		  <h3 class="title_semana">Artículo de la Semana</h3>
-		  <!--Primer articulo-->
-		  <hr>
-		  <div class="row espacio-1">
-			<div class="col-md-7" id="img_semana">
-			  <img src="./categoria/imagenes/stylelife_img/desk.jpg" class="img-fluid" alt="img-thumbnail">
+			<h3 class="title_semana">Artículo de la Semana</h3>
+			<!--Primer articulo-->
+			<hr>
+			<div class="row espacio-1">
+				<div class="col-md-7" id="img_semana">
+					<img src="./categoria/imagenes/stylelife_img/desk.jpg" class="img-fluid" alt="img-thumbnail">
+				</div>
+
+				<div class="col-md-3 align-self-center" style="margin-right: 5em;">
+					<h6 class="title_semana">Las Mejores Apps para Tomar Notas en Android</h6>
+					<p id="p_semana">Te presentamos las mejores apps para Android para tomar notas y listas de tareas.
+						<br>¡Exprime esa productividad al máximo!
+					</p>
+					<a href="./categoria/articulo1_stylife.html" target="_parent">
+						<button type="button" class="btn btn-success" id="btn_semana">Ver más</button></a>
+
+				</div>
 			</div>
-	
-			<div class="col-md-3 align-self-center" style="margin-right: 5em;">
-			  <h6 class="title_semana">Las Mejores Apps para Tomar Notas en Android</h6>
-			  <p id="p_semana">Te presentamos las mejores apps para Android para tomar notas y listas de tareas.
-				<br>¡Exprime esa productividad al máximo!
-			  </p>
-			  <a href="./categoria/articulo1_stylife.html" target="_parent">
-				<button type="button" class="btn btn-success" id="btn_semana">Ver más</button></a>
-	
-			</div>
-		  </div>
 	</section>
 
 	<!--JQuery-->
@@ -253,7 +262,7 @@
 <footer>
 	<section>
 		<div class="grid-container" id="footer_color">
-			<div class="container-fluid col" style="margin-top:1cm;">
+			<div class="container-fluid col margen-arriba">
 				<a>
 					<h3 id="footer_title">Breaking Time</h3>
 				</a>
@@ -280,7 +289,7 @@
 						</p>
 						<h5 id="titulos_footer">Follow Us
 						</h5>
-						<div style="display:inline-block;">
+						<div class="margen-redes">
 							<img src="./imagenes/facebook.png" class="img-fluid img_footer" alt="img-thumbnail">
 							<img src="./imagenes/twitter.png" class="img-fluid img_footer" alt="img-thumbnail">
 						</div>

@@ -107,6 +107,13 @@ color: white;
     padding-bottom: 0.5em;
     padding-top: 0.5em;
 }
+
+.margen-arriba{
+    margin-top: 1cm;
+}
+.bloque-redes{
+    display:inline-block;
+}
     /*CSS del hover de los articulos destacados*/
 .caption-style-1 {
     list-style-type: none;
