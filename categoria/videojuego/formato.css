@@ -1,45 +1,10 @@
-.navega{
-    background-color:#085C6C;
-color: white;
-}
-#principal{
-    font-size: 20px;
-}
-.letrasNav{
-    color:white;
-    font-family:Century Ghotic;
-    font-size: 16px;
-    font-weight: bold;
-    margin-left: 20px;
-}
-.letrasNav:hover{
-    color:#808B96 ;
-}
-.buscador{
-    margin-bottom: -5px;
-}
-.up{/*para reparar el navbar*/
-	position: relative;
-	top: -15px;
-}
-.mover_buscador{/*para reparar el navbar*/
-	position: relative;
-	right: 90px;
-	top: 20px;
-}
-.mover_boton_buscador{/*para reparar el navbar*/
-	position: relative;
-	top: -18px;
-	left: 120px;
-}
-/*aqui termina el navbar*/
-
 .dimensiones_imagen{
 	width: 95%;
 	height: 500px;
 }
 .texto_destacados{
 	color: white;
+    width: 10%;
 	position: relative;
 	left: 3%;
 }

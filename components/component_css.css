@@ -1,0 +1,100 @@
+/*CSS DE LA BARRA DEL MENU*/
+.navega{
+    background-color:#085C6C;
+color: white;
+}
+#principal{
+    font-size: 20px;
+}
+.letrasNav{
+    color:white;
+    font-family:Century Ghotic;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.letrasNav:hover{
+    color:#808B96 ;
+}
+.buscador{
+    margin-bottom: -5px;
+    height: 10%;
+}
+.up{
+    position: relative;
+    top: -8px;
+}
+#frame_menu{
+    width: 100%;
+    height: 9.5%;
+    min-height: 60px;
+}
+/*CSS DEL INFO */
+.up_info{
+    position: relative;
+    top: -19px;
+}
+
+#frame_info{
+    width: 100%;
+    height: 44%;
+    min-height: 270px;
+}
+#footer_color{
+    background-color:#085C6C;
+    padding-top: 1em;
+    margin-top: 0.5cm;
+    padding-bottom: 1em;
+    max-height: 220px;
+}
+
+#footer_title{
+    color: white;
+    font-family: Century Ghotic;
+    text-align: center;
+}
+#titulos_footer{
+    color: white;
+}
+.img_footer{
+    width: 30px;
+    height: 30px;
+}
+.footer_lista{
+    font-weight: normal;
+    font-size: 14px;
+    font-family: Century Ghotic;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+}
+.footer_lista:hover{
+    color:#808B96 ;
+    text-decoration: none;
+}
+.derechos{
+    background-color: #117864 ;
+    color: white;
+    text-align: center;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
+.margen-arriba{
+    margin-top: 0.5cm;
+}
+.bloque-redes{
+    display:inline-block;
+}
+.mover_categorias{
+    position: relative;
+    left: 34%;
+}
+.mover_acerca{
+    position: relative;
+    left: 59%;
+    top: -135px;
+}
+.quitar_viñeta{
+    list-style: none;
+}

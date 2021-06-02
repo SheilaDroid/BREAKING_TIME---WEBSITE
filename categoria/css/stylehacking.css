@@ -1,3 +1,8 @@
+/*Body*/
+.principal{
+    background-color: rgb(0, 0, 0)
+}
+
 .navega{
     background-color:#085C6C;
 color: white;
@@ -34,19 +39,9 @@ color: white;
 }
 /*aqui termina el navbar*/
 
-#descripcion{
-	font-size: 1.5em;
-	font-family: 'Century Ghotic';
-	text-align: center;
-	color: gray;
-}
-
-.container-articulos{
-	background-color: #F0B27A;
-}
 .dimensiones_imagen{
-	width: 1300px;
-	height: 500px;
+	width: 1900px;
+	height: 700px;
 	position: relative;
 	top: -23px;
 }
@@ -77,10 +72,11 @@ color: white;
 	position: relative;
 }
 .fondo1{
-	background-color: blue;
+	background-color: rgb(1, 20, 9);
 }
 .fondo2{
-	background-color: white;
+	/*background-color: rgb(0, 0, 0);*/
+    background-image: url(/categoria/imagenes/fondoH.jpg);
 }
 .pre-card{
 	width: 18rem;
@@ -94,7 +90,7 @@ color: white;
 }
 
 .marco:hover {
-    box-shadow: 0 0 10px 10px rgba(0, 140, 186, 0.9);
+    box-shadow: 0 0 10px 10px rgba(86, 255, 8, 0.9);
     /*si quieren cambiar el color del marco aqui*/
 }
 .quitar_efecto_link{

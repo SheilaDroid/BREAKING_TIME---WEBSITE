@@ -1,3 +1,8 @@
+<?php 
+  $usuario=$_GET['usuario'];
+?>
+
+
 <html>
 <head>
 	<!-- PONER AQUI EL NOMBRE DE LA CATEGORIA-->
@@ -15,7 +20,7 @@
   <head>
     <!--BARRA DE NAVEGACION-->
     <footer id="MENU">
-        <iframe id="frame_menu" scrolling="no"  src="../components/menu2.php?contraseña=hola"></iframe> 
+        <iframe id="frame_menu" scrolling="no"  src="../components/menu2.php?usuario=<?= $usuario; ?>"></iframe> 
     </footer>
     <!-- FIN BARRA DE NAVEGACION-->
   </head>
