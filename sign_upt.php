@@ -1,10 +1,19 @@
 <?php
+include_once('./components/basedatos.php');
+$BD=new BaseDatos();
 if(!empty($_REQUEST['contraseña'])&&!empty($_REQUEST['c_contraseña'])){
 	if($_REQUEST['contraseña']==$_REQUEST['c_contraseña']){
-		$usuario=$_REQUEST['usuario'];
-		header('Location:./categoria/videojuegos.php?usuario='.$usuario);
+		if(!empty($_REQUEST['usuario'])&&!empty($_REQUEST['correo'])&&!empty($_REQUEST['sexo'])){
+			$usuario=$_REQUEST['usuario'];
+			
+			$BD->gurdar_usuario($_REQUEST['usuario'],$_REQUEST['correo'],$_REQUEST['contraseña'],$_REQUEST['sexo'],"user");
+
+			header('Location:./index.php?usuario='.$usuario);
+			exit();
+		}
+		
 	}else{
-		echo "no funciono";
+		echo "La contraseña debe ser igual ";
 		//header('Location:index.html');
 	}
 }
@@ -41,7 +50,7 @@ if(!empty($_REQUEST['contraseña'])&&!empty($_REQUEST['c_contraseña'])){
 			<br>
 		</div>
 		<div>
-		<h6 class="position-sign_up"><a class="letras-login2" href="login.html">Iniciar Sesion</a> | <a href="" class="letras-login2">Olvide mi contraseña</a></h6>
+		<h6 class="position-sign_up"><a class="letras-login2" href="login.php">Iniciar Sesion</a> | <a href="" class="letras-login2">Olvide mi contraseña</a></h6>
 	</div>
 	</section>
 </body>

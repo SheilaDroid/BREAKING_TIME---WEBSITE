@@ -1,3 +1,10 @@
+<?php
+  if(!empty($_GET['usuario'])){
+    $usuario=$_GET['usuario'];
+  }else{
+    $usuario="sin_usuario";
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,12 +23,12 @@
 	        <a class="navbar-brand" href="#">
 	          <img src="./imagenes/coffee-time.png" width="50" height="50" alt="">
 	        </a>
-	        <a class="navbar-brand letrasNav" target="_parent" id="principal" href="../index.html">BREAKING TIME</a>
+	        <a class="navbar-brand letrasNav" target="_parent" id="principal" href="../index.php?usuario=<?= $usuario; ?>">BREAKING TIME</a>
 	        <!--Elementos de la navbar-->
 	        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	          <ul class="navbar-nav mr-auto">
 	            <li class="nav-item">
-	              <a class="nav-link letrasNav" href="../categoria/videojuegos.html" target="_parent">Videojuegos</a>
+	              <a class="nav-link letrasNav" href="../categoria/videojuegos.php?usuario=<?= $usuario; ?>" target="_parent">Videojuegos</a>
 	            </li>
 	            <li class="nav-item">
 	              <a class="nav-link letrasNav" href="../categoria/hacking.html" target="_parent">Hacking</a>
@@ -42,13 +49,13 @@
 	        <ul class="quitar_viñeta">
 	        </ul>
 	        <?php 
-	        	if(!empty($_GET['usuario'])){
+	        	if(!empty($_GET['usuario'])&&$_GET['usuario']!="sin_usuario"){
 	        			$usuario=$_GET['usuario'];
 	        		?>
-	        	<a href="../login.html" target="_parent"><button ><?php echo $usuario ?></button></a><?php  
+	        	<a href="../login.php" target="_parent"><button class="boton-user"><?php echo $usuario ?></button></a><?php  
 	        	}else{
 	        		?>
-	        	<a href="../login.html" target="_parent"><button >Inicio Sesion</button></a>
+	        	<a href="../login.php" target="_parent"><button class="boton-user">Inicio Sesion</button></a>
 	        	<?php
 	        	}
 	        ?>

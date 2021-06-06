@@ -1,5 +1,9 @@
 <?php 
-  $usuario=$_GET['usuario'];
+if(!empty($_GET['usuario'])){
+    $usuario=$_GET['usuario'];
+  }else{
+    $usuario="sin_usuario";
+  }
 ?>
 
 
@@ -47,7 +51,7 @@
               <a href=""><img src="./videojuego/imagenes/destacado_imagen2.jpg" class="figure-img img-fluid rounded dimensiones_imagen2_destacado d-flex justify-content-between" alt="..."></a>
               </figure>
               <figure class="figure"><!--imagen destacado 3-->
-              <a href="./videojuego/articulo2.html"><img src="./videojuego/imagenes/destacado_imagen3.jpg" class="figure-img img-fluid rounded dimensiones_imagen3_destacado d-flex justify-content-between" alt="..."></a>
+              <a href="./videojuego/articulo2.php?usuario=<?= $usuario; ?>"><img src="./videojuego/imagenes/destacado_imagen3.jpg" class="figure-img img-fluid rounded dimensiones_imagen3_destacado d-flex justify-content-between" alt="..."></a>
             </div>
           </div>
         </div>
@@ -63,28 +67,28 @@
   			<div class="row gx-5 d-flex justify-content-evenly">
     			<div class="col">
       				<div class="card pre-card marco" ><!--imagen articulo 1,1-->
-  					<a href="./videojuego/articulo2.html"><img src="./videojuego/imagenes/articulo2.jpg" class="card-img-top" alt="..."></a>
+  					<a href="./videojuego/articulo2.php?usuario=<?= $usuario; ?>"><img src="./videojuego/imagenes/articulo2.jpg" class="card-img-top" alt="..."></a>
   					<div class="card-body">
-  					<a href="./videojuego/articulo2.html" class="quitar_efecto_link"><h5 class="card-title">Ninja Gaiden: Master Collection muestra su acción en un nuevo tráiler</h5></a>
-    				<p class="card-text">La colección remasteriza de Ninja Gaiden para plataformas actuales; llegará el 10 de junio a Xbox One, PS4, Nintendo Switch y PC.</p><a href="./videojuego/articulo2.html" class="quitar_efecto_link">Leer mas..</a>
+  					<a href="./videojuego/articulo2.php?usuario=<?= $usuario; ?>" class="quitar_efecto_link"><h5 class="card-title">Ninja Gaiden: Master Collection muestra su acción en un nuevo tráiler</h5></a>
+    				<p class="card-text">La colección remasteriza de Ninja Gaiden para plataformas actuales; llegará el 10 de junio a Xbox One, PS4, Nintendo Switch y PC.</p><a href="./videojuego/articulo2.php?usuario=<?= $usuario; ?>" class="quitar_efecto_link">Leer mas..</a>
   					</div>
 					</div>
     			</div>
     			<div class="col">
       				<div class="card pre-card marco" ><!--imagen articulo 1,2-->
-  					<a href="./videojuego/articulo1.html"><img src="./videojuego/imagenes/articulo1.jpg" class="card-img-top" alt="..."></a>
+  					<a href="./videojuego/articulo1.php?usuario=<?= $usuario; ?>"><img src="./videojuego/imagenes/articulo1.jpg" class="card-img-top" alt="..."></a>
   					<div class="card-body">
-  					<a href="./videojuego/articulo1.html" class="quitar_efecto_link"><h5 class="card-title">Resident Evil Village: todo sobre el nuevo juego de terror de Capcom</h5></a>
-    				<p class="card-text">Resident Evil Village llega el próximo 7 de mayo en PC, PS4, PS5, Xbox One, Series y Stadia para convertirse en una nueva oda al terror más descarnado.</p><a href="./videojuego/articulo1.html" class="quitar_efecto_link">Leer mas..</a>
+  					<a href="./videojuego/articulo1.php?usuario=<?= $usuario; ?>" class="quitar_efecto_link"><h5 class="card-title">Resident Evil Village: todo sobre el nuevo juego de terror de Capcom</h5></a>
+    				<p class="card-text">Resident Evil Village llega el próximo 7 de mayo en PC, PS4, PS5, Xbox One, Series y Stadia para convertirse en una nueva oda al terror más descarnado.</p><a href="./videojuego/articulo1.php?usuario=<?= $usuario; ?>" class="quitar_efecto_link">Leer mas..</a>
   					</div>
 					</div>
     			</div>
     			<div class="col">
       				<div class="card pre-card marco" ><!--imagen articulo 1,3-->
-  					<a href="./videojuego/articulo3.html"><img src="./videojuego/imagenes/articulo3.jpg" class="card-img-top" alt="..."></a>
+  					<a href="./videojuego/articulo3.php?usuario=<?= $usuario; ?>"><img src="./videojuego/imagenes/articulo3.jpg" class="card-img-top" alt="..."></a>
   					<div class="card-body">
-  					<a href="./videojuego/articulo3.html" class="quitar_efecto_link"><h5 class="card-title">El multijugador online de los juegos free-to-play pasa a ser gratuito en todas las consolas de Xbox</h5></a>
-    				<p class="card-text">Los videojuegos free-to-play a partir de ahora sí que harán honor a su categoría en las diferentes consolas de Xbox.</p><a href="./videojuego/articulo3.html" class="quitar_efecto_link">Leer mas..</a>
+  					<a href="./videojuego/articulo3.php?usuario=<?= $usuario; ?>" class="quitar_efecto_link"><h5 class="card-title">El multijugador online de los juegos free-to-play pasa a ser gratuito en todas las consolas de Xbox</h5></a>
+    				<p class="card-text">Los videojuegos free-to-play a partir de ahora sí que harán honor a su categoría en las diferentes consolas de Xbox.</p><a href="./videojuego/articulo3.php?usuario=<?= $usuario; ?>" class="quitar_efecto_link">Leer mas..</a>
   					</div>
 					</div>
     			</div>
