@@ -20,7 +20,7 @@
 		<!--Barra de Navegación-->
 		<nav class="navbar navbar-expand-lg up ">
 	      <div class="container-fluid d-flex justify-content-evenly navega">
-	        <a class="navbar-brand" href="#">
+	        <a class="navbar-brand" href="../index.php?usuario=<?= $usuario;?>">
 	          <img src="./imagenes/coffee-time.png" width="50" height="50" alt="">
 	        </a>
 	        <a class="navbar-brand letrasNav" target="_parent" id="principal" href="../index.php?usuario=<?= $usuario;?>">BREAKING TIME</a>
