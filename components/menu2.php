@@ -23,7 +23,7 @@
 	        <a class="navbar-brand" href="#">
 	          <img src="./imagenes/coffee-time.png" width="50" height="50" alt="">
 	        </a>
-	        <a class="navbar-brand letrasNav" target="_parent" id="principal" href="../index.php?usuario=<?= $usuario; ?>">BREAKING TIME</a>
+	        <a class="navbar-brand letrasNav" target="_parent" id="principal" href="../index.php?usuario=<?= $usuario;?>">BREAKING TIME</a>
 	        <!--Elementos de la navbar-->
 	        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	          <ul class="navbar-nav mr-auto">
@@ -37,7 +37,7 @@
 	              <a class="nav-link letrasNav" href="../categoria/computacion.html" target="_parent">Computación</a>
 	            </li>
 	            <li class="nav-item">
-	              <a class="nav-link letrasNav" href="../categoria/stylelife.html" target="_parent">Estilo de Vida</a>
+	              <a class="nav-link letrasNav" href="../categoria/stylelife.php?usuario=<?= $usuario; ?>" target="_parent">Estilo de Vida</a>
 	            </li>
 	          </ul>
 	        </div>

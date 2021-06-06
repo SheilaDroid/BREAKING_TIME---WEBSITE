@@ -1,3 +1,10 @@
+<?php 
+if(!empty($_GET['usuario'])){
+    $usuario=$_GET['usuario'];
+  }else{
+    $usuario="sin_usuario";
+  }
+?>
 <html>
 <head>
 	<!-- PONER AQUI EL NOMBRE DE LA CATEGORIA-->

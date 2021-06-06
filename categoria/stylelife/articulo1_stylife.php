@@ -212,6 +212,12 @@
             </div>
         </div>
     </section>
+    <!--Caja de comentarios-->
+     <footer id="BOXCOMMENTS"><!-- por cada nivel de carpetas poner " ../ " --> 
+        <iframe id="frame_comentarios" scrolling="no" src="../../components/commentsbox.php?usuario=<?= $usuario; ?>"></iframe> 
+    </footer>
+    <!-- FIN BARRA DE NAVEGACION-->
+
     <!--SECCION DONDE VA EL COPYRIGHT-->
     <div class="grid-container derechos">
         <p id="copy">Copyright 2021 Breaking Time</p>
