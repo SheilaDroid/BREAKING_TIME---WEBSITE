@@ -124,6 +124,16 @@ class BaseDatos
         }
         return $consulta; //retorna consulta para imprimir en html
     }
+
+    //mostrar articulos favoritos por usuario
+    public function consulta_favoritos($id_usuario){
+        if ($consulta = $GLOBALS['conexion']->query("select idArticulo from artFavoritos where idUsuario= '$id_usuario'")) {
+            echo "éxito consulta";
+        } else {
+            echo "Error consulta";
+        }
+        return $idArticulo; //retorna los id's de los articulos favoritos por usuario
+    }
     
     //guardar articulos favoritos 
     public function agregar_articulo($id_usuario,$id_articulo){
