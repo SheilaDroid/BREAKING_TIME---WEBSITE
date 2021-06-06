@@ -8,13 +8,11 @@
 		$registro=$GLOBALS['consulta'];
 		while ($registro=$GLOBALS['consulta']->fetch_assoc()) {
 			if($registro['nombre']==$_REQUEST['usuario'] && $registro['password']==$_REQUEST['password']){
-			echo "si entro";
 			header('Location:./index.php?usuario='.$registro['nombre']);
 			exit();
 			}
 		}
 	}else{
-		echo "holasda";
 	}
 
 ?>
