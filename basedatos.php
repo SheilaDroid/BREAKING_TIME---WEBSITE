@@ -62,7 +62,7 @@ class BaseDatos
     //---------------------------------------------- seccion tabla usuarios -------------------------------------------------------
 
     //guardar usuario
-    public function gurdar_usuario($nombre,$correo,$password,$sexo,$tipo){
+    public function guardar_usuario($nombre,$correo,$password,$sexo,$tipo){
         $sentenciasql = "insert into usuarios (nombre,correo,password,sexo,tipo) values ('$nombre','$correo,$password,$tipo')";   
         try {
             $GLOBALS['conexion']->query($sentenciasql); //método que genera accion
@@ -74,7 +74,7 @@ class BaseDatos
 
     }
     //borrar usuario por nombre
-    public function borrar_artFavorito($nombre){
+    public function borrarUsuario($nombre){
         if ($GLOBALS['conexion']->query("delete from usuarios where  nombre='$nombre'")) {
             echo "usuario borrado con exito";
         } else {
@@ -83,7 +83,7 @@ class BaseDatos
     }
 
      //borrar usuario por id
-    public function borrar_artFavoritoId($id_usuario){
+    public function borrarUsuarioId($id_usuario){
         if ($GLOBALS['conexion']->query("delete from usuarios where  id='$id_usuario'")) {
             echo "usuario borrado con exito";
         } else {
