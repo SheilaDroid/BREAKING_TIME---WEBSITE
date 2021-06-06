@@ -1,3 +1,11 @@
+<?php
+  if(!empty($_GET['usuario'])){
+    $usuario=$_GET['usuario'];
+  }else{
+    $usuario="sin_usuario";
+  }
+?>
+
 <html>
 
 <head>
@@ -6,49 +14,15 @@
 	</title>
 	<link rel="stylesheet" href="./plantilla-bp/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./style_homepage.css" type="text/css">
+	<link rel="stylesheet" href="./components/component_css.css" type="text/css">
 </head>
 
 <body>
 	<header>
-		<!--Barra de Navegación-->
-		<nav class="navbar navbar-expand-lg">
-			<div class="container-fluid d-flex justify-content-evenly navega">
-				<a class="navbar-brand" href="#">
-					<img src="./imagenes/coffee-time.png" width="50" height="50" alt="">
-				</a>
-				<a class="navbar-brand letrasNav" id="principal" href="#">BREAKING TIME</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<!-- Elementos de la navbar-->
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item">
-							<a class="nav-link letrasNav" href="./categoria/videojuegos.html"
-								target="_parent">Videojuegos</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link letrasNav" href="./categoria/hacking.html" target="_parent">Hacking</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link letrasNav" href="./categoria/computacion.html"
-								target="_parent">Computación</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link letrasNav" href="./categoria/stylelife.html" target="_parent">Estilo de
-								Vida</a>
-						</li>
-					</ul>
-				</div>
-				<!--Buscador-->
-				<form class="form-inline buscador">
-					<input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
-					<button class="btn btn-info" type="submit">Buscar</button>
-				</form>
-		</nav>
-
+		<!--BARRA DE NAVEGACION-->
+		<footer id="MENU">
+	        <iframe id="frame_menu" scrolling="no" src="./components/menu2.php?usuario=<?= $usuario; ?>"></iframe> 
+	    </footer><!-- FIN BARRA DE NAVEGACION-->
 	</header>
 
 	<!--CONTENEDOR-->
@@ -106,7 +80,7 @@
 				<div class="col-md-4">
 					<ul class="caption-style-1">
 						<li>
-							<a href="./categoria/videojuego/articulo2.html"> <img src="imagenes/d1.jpg"
+							<a href="./categoria/videojuego/articulo2.php?usuario=<?= $usuario; ?>"> <img src="imagenes/d1.jpg"
 									class="img-fluid" alt="Responsive">
 								<div class="caption">
 									<div class="blur"></div>
@@ -122,7 +96,7 @@
 				<div class="col-md-4">
 					<ul class="caption-style-1">
 						<li>
-							<a href="categoria/computación/mediatek-noticia.html">
+							<a href="categoria/computación/mediatek-noticia.php?usuario=<?= $usuario; ?>">
 								<img src="imagenes/mediatek-noticia.jpg" class="img-fluid" alt="Responsive">
 								<div class="caption">
 									<div class="blur"></div>
@@ -138,7 +112,7 @@
 				<div class="col-md-4">
 					<ul class="caption-style-1">
 						<li> 
-							<a href="./categoria/hacking/articulo2.html"><img src="imagenes/d3.jpg" class="img-fluid" alt="Responsive">
+							<a href="./categoria/hacking/articulo2.php?usuario=<?= $usuario; ?>"><img src="imagenes/d3.jpg" class="img-fluid" alt="Responsive">
 							<div class="caption">
 								<div class="blur"></div>
 								<div class="caption-text">
@@ -225,7 +199,7 @@
 						a la acción frenética de la saga, un repaso a técnicas, armas, habilidades y situaciones a las
 						que se enfrentará Ryu Hayabusa en esta colección remasterizada de la trilogía, que se pondrá a
 						la venta el 10 de junio en PS4, Xbox One, Nintendo Switch y PC. </p>
-					<a href="./categoria/videojuego/articulo2.html">
+					<a href="./categoria/videojuego/articulo2.php?usuario=<?= $usuario; ?>">
 						<button type="button" class="btn btn-success" id="btn_semana">Ver más</button>
 					</a>
 				</div>
@@ -250,7 +224,7 @@
 						aquellos de hace cinco años. Todo esto gracias a la carrera por construir procesadores con una
 						litografía que permite que los transistores que los componen sean minúsculos.
 					</p>
-					<a href="./categoria/computación/mediatek-noticia.html">
+					<a href="./categoria/computación/mediatek-noticia.php?usuario=<?= $usuario; ?>">
 						<button type="button" class="btn btn-success" id="btn_semana">Ver más</button>
 					</a>
 				</div>
@@ -305,7 +279,7 @@
 					<p id="p_semana">Te presentamos las mejores apps para Android para tomar notas y listas de tareas.
 						<br>¡Exprime esa productividad al máximo!
 					</p>
-					<a href="./categoria/articulo1_stylife.html" target="_parent">
+					<a href="./categoria/articulo1_stylife.php?usuario=<?= $usuario; ?>" target="_parent">
 						<button type="button" class="btn btn-success" id="btn_semana">Ver más</button></a>
 
 				</div>
@@ -318,49 +292,8 @@
 	<script src="./plantilla-bp/js/bootstrap.min.js"></script>
 </body>
 
-<footer>
-	<section>
-		<div class="grid-container" id="footer_color">
-			<div class="container-fluid col margen-arriba">
-				<a>
-					<h3 id="footer_title">Breaking Time</h3>
-				</a>
-				<div class="row" id="fandom">
-					<!--Primer columna: EXPLORE PROPERTIES Y FOLLOW US-->
-					<div class="col-md-3 offset-4">
-						<h5 id="titulos_footer">Categorías
-						</h5>
-						<p class="footer_lista">
-							<a class="footer_lista" href="./categoria/videojuegos.html"
-								target="_parent">Videojuegos</a><br>
-							<a class="footer_lista" href="./categoria/hacking.html" target="_parent">Hacking</a><br>
-							<a class="footer_lista" href="./categoria/computacion.html"
-								target="_parent">Computación</a><br>
-							<a class="footer_lista" href="./categoria/stylelife.html" target="_parent">Estilo de
-								Vida</a><br>
-						</p>
-					</div>
-
-					<div class="col-md-3">
-						<h5 id="titulos_footer">Acerca de</h5>
-						<p class="footer_lista">
-							<a class="footer_lista" href="#" target="_blank">¿Qué es Breaking Time?</a><br>
-						</p>
-						<h5 id="titulos_footer">Follow Us
-						</h5>
-						<div class="margen-redes">
-							<img src="./imagenes/facebook.png" class="img-fluid img_footer" alt="img-thumbnail">
-							<img src="./imagenes/twitter.png" class="img-fluid img_footer" alt="img-thumbnail">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--SECCION DONDE VA EL COPYRIGHT-->
-	<div class="grid-container derechos">
-		<p id="copy">Copyright 2021 Breaking Time</p>
-	</div>
+<footer id="MENU"><!-- por cada nivel de carpetas poner " ../ " --> 
+  <iframe id="frame_info" scrolling="no"  src="./components/info.html"></iframe>
 </footer>
 
 </html>
