@@ -91,7 +91,6 @@ class BaseDatos
     }
 
     //---------------------------------------------- seccion de comentarios -------------------------------------------------------
-
     /*Mostar comentarios
     Muestra los comentarios dependiendo del articulo y tambien muestra el nombre de usuario que hizo el articulo */
     public function mostrar_comentarios($id_articulo)
@@ -103,7 +102,9 @@ class BaseDatos
             //echo "datos guardados correctamente";
         } catch (mysqli_sql_exception $ex) {
             echo $ex;
-
+        }
+        return $consulta; //retorna consulta para imprimir en html
+    }
     //guardar comentarios
     public function guardar_comentarios($id_usuario, $id_articulo, $comentario)
     {

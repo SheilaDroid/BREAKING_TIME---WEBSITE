@@ -1,10 +1,8 @@
 <?php
 include_once('basedatos.php');
-
 $bd= new BaseDatos();
-$GLOBALS['consulta'] = $bd->Consulta();
+$GLOBALS['consulta'] = $bd -> mostrar_comentarios(1);
 //imprimir todos los registros en html, se recibe en una variable
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,85 +26,58 @@ $GLOBALS['consulta'] = $bd->Consulta();
 
 
 <body>
-  <form method="POST">
+  <form method="POST" >
     <div class="container">
       <h3>¿Te gustó este artículo? ¡Dejanos tu comentario!</h3>
       <div class="mb-3">
         <textarea class="form-control" id="comentario" name="comentario" rows="3"></textarea>
       </div>
-      <input class="btn btn-primary boton2" type="submit" value="Guardar" name="button1"
-                                id="boton2">
+      <input class="btn btn-primary boton2" type="submit" value="Guardar" name="button1" id="boton2">
     </div>
   </form>
   <!--AQUI VAN A APARECER LOS COMENTARIOS ANTERIORES-->
   <tbody>
-        <?php 
+    <?php
                 while ($registro=$consulta->fetch_assoc()) {
                     ?>
-                 
-            <tr>
-                <th scope="row"><?php echo $registro['id']; ?>
-                </th>
-                <td><?php echo $registro['noControl']; ?>
-                </td>
-                <td><?php echo $registro['nombre']; ?>
-                </td>
-                <td><?php echo $registro['fecha_nac']; ?>
-                </td>
-                <td><?php echo $registro['edad']; ?>
-                </td>
-                <td><?php echo $registro['sexo']; ?>
-                </td>
-                <td><?php echo $registro['ciudad']; ?>
-                </td>
-                <?php 
-                /*serialize permite compactar el arreglo en una variable para enviarl
-                por el metodo get */
-                $arreglo=serialize($registro);
-                $arreglo = urlencode($arreglo);
-                ?>
-                <td><a href="mostrar.php?variable=1 & id=
-                <?php echo $registro['id']?>">Mostrar</a></td>
-                <td><a href="mostrar.php?variable=2 & id=<?php echo $arreglo?>">Modificar</a></td>
-                <!--MANDAR VARIABLES
-                    Podemos mandarle variables a otro php poniendo el signo ?
-                    despues el nombre de la variable y el valor.
-                    Si tenemos que mandar mas variables, se usa & para concatenar-
-                    Se envian con el metodo GET y asi se reciben en el otro php
-                -->
-                <td><a href="mostrar.php?variable=3 & id=
-                <?php echo $registro['id']?>">Eliminar</a></td>
-            </tr>
-            <?php
+
+    <tr>
+      <td><?php echo $registro['nombre']; ?>
+      </td>
+      <td><?php echo $registro['comentario']; ?>
+      </td>
+
+    </tr>
+    <?php
                 }?>
-        </tbody>
-<!---->
+  </tbody>
+  <!---->
   <br>
-                    <div class="toast grid-container" style="position: absolute; bottom: 0; right: 100;">
-                        <div class="toast-header">
-                            Aviso
-                        </div>
-                        <div class="toast-body">
-                            <?php
+  <div class="toast grid-container" style="position: absolute; bottom: 0; right: 100;">
+    <div class="toast-header">
+      Aviso
+    </div>
+    <div class="toast-body">
+      <?php
                                 $frase = "¡Comentario Guardado!";
                                 echo $frase;
                                 ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-    <script>
-        $(document).ready(function() {
-            $("#boton2").click(function() {
-                $('.toast').toast({
-                    delay: 2000
-                });
-                $('.toast').toast('show');
-            });
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      $("#boton2").click(function() {
+        $('.toast').toast({
+          delay: 2000
         });
-    </script>
+        $('.toast').toast('show');
+      });
+    });
+  </script>
 </body>
 
 </html>

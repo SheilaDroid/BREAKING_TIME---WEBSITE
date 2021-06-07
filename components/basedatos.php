@@ -109,6 +109,10 @@ class BaseDatos
 
     }
 
+    public function prueba($id){
+        echo "yo si funciono";
+    }
+
     //borrar comrntario por id 
     public function borrar_comentario($id_comentario){
         if ($GLOBALS['conexion']->query("delete from comentarios where  id='$id_comentario'")) {
