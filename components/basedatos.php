@@ -70,7 +70,7 @@ class BaseDatos
         return $consulta;
     }
     //guardar usuario
-    public function gurdar_usuario($nombre,$correo,$password,$sexo,$tipo){
+    public function guardar_usuario($nombre,$correo,$password,$sexo,$tipo){
         $sentenciasql = "insert into usuarios (nombre,correo,password,sexo,tipo) values ('$nombre','$correo','$password','$sexo','$tipo')";   
         try {
             $GLOBALS['conexion']->query($sentenciasql); //método que genera accion
