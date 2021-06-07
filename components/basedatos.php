@@ -100,7 +100,7 @@ class BaseDatos
     Muestra los comentarios dependiendo del articulo y tambien muestra el nombre de usuario que hizo el articulo */
     public function mostrar_comentarios($id_articulo)
     {
-        $sentenciasql = "SELECT usuarios.nombre, comentarios.comentario FROM usuarios JOIN comentarios ON usuarios.id = comentarios.idUsuario 
+        $sentenciasql = "SELECT comentarios.id, comentarios.idUsuario, usuarios.nombre, comentarios.comentario FROM usuarios JOIN comentarios ON usuarios.id = comentarios.idUsuario 
         WHERE comentarios.idArticulo=".$id_articulo."";
         try {
             $consulta=$GLOBALS['conexion']->query($sentenciasql); //método que genera accion
@@ -125,9 +125,9 @@ class BaseDatos
     //borrar comrntario por id 
     public function borrar_comentario($id_comentario){
         if ($GLOBALS['conexion']->query("delete from comentarios where  id='$id_comentario'")) {
-            echo "comentario borrado con exito";
+            //echo "comentario borrado con exito";
         } else {
-            echo "error al borrar comentario";
+            //echo "error al borrar comentario";
         }
     }
 

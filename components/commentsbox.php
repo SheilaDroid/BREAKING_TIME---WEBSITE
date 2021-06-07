@@ -1,25 +1,30 @@
 <?php
+  include_once("basedatos.php");
+   $con=new BaseDatos();
     //Esto es para hacer la alta de los comentarios
     if (array_key_exists("button1", $_REQUEST)) {
-        include_once("basedatos.php");
-        $con=new BaseDatos();
+        $id_usuario;
+        $id_usuario=$con->getIdUsuario($_REQUEST['username']);
         if ($_REQUEST['username'] == "sin_usuario") {
-          //no se podra comentar si no esta registrado
-          echo "<div class='alert alert-danger' role='alert'>
+            //no se podra comentar si no esta registrado
+            echo "<div class='alert alert-danger' role='alert'>
           Primero debes registrarte para poder comentar.
         </div>";
         } else {
-            $id_usuario=$con->getIdUsuario($_REQUEST['username']);
             if ($con->guardar_comentarios(
                 $id_usuario,
                 $_REQUEST['idArticulo'],
                 $_REQUEST['comentario'],
             )) {
-             // echo "todo guardado";
+                // echo "todo guardado";
             } else {
-               // echo "no se pudo guardar comentario";
+                // echo "no se pudo guardar comentario";
             }
         }
+    }
+    if (array_key_exists("button2", $_REQUEST)) {
+        $idborrarcm=$_REQUEST['id_cm'];
+        $con->borrar_comentario($idborrarcm);
     }
 ?>
 <?php
@@ -56,7 +61,6 @@ $GLOBALS['consulta'] = $bd->mostrar_comentarios($_REQUEST['idArticulo']);
       <div class="mb-3">
         <textarea class="form-control" id="comentario" name="comentario" rows="3"></textarea>
       </div>
-      <input type="hidden" id='tiempo_inicio' name='tiempo_inicio' value="">
       <input class="btn btn-primary boton2" type="submit" value="Guardar" name="button1" id="boton2">
     </div>
   </form>
@@ -67,12 +71,22 @@ $GLOBALS['consulta'] = $bd->mostrar_comentarios($_REQUEST['idArticulo']);
     <hr>
     <?php
     while ($registro=$consulta->fetch_assoc()) {
-        ?>
+        $id_usuario_c=$registro['idUsuario'];
+        $idcm=$registro['id'];
+        $obj=new BaseDatos();
+        $id_usuario=$obj->getIdUsuario($_REQUEST['username']); ?>
     <h5><?php echo $registro['nombre']; ?>
       :</h5>
     <p><?php echo $registro['comentario']; ?>
     </p>
-    <a href="#">Borrar comentario</a>
+    <?php
+        if ($id_usuario==$id_usuario_c) {?>
+    <form method='POST'>
+      <input type="hidden" id="id_cm" name="id_cm" type="number"
+        value="<?php echo $registro['id']?>">
+      <input class='btn btn-primary' type='submit' value='Borrar Comentario' name='button2' id='boton2'>
+    </form>
+    <?php  } ?>
     <hr>
     <?php
     }?>
