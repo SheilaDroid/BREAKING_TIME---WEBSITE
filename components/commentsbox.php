@@ -1,7 +1,7 @@
 <?php
 include_once('basedatos.php');
 $bd = new BaseDatos();
-$GLOBALS['consulta'] = $bd->mostrar_comentarios(1);
+$GLOBALS['consulta'] = $bd->mostrar_comentarios($_REQUEST['idArticulo']);
 //imprimir todos los registros en html, se recibe en una variable
 ?>
 <!DOCTYPE html>
@@ -22,11 +22,11 @@ $GLOBALS['consulta'] = $bd->mostrar_comentarios(1);
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
     integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
   </script>
+  <link rel="stylesheet" href="./components/comments.css" type="text/css">
 </head>
 
-
 <body>
-  <form method="POST" >
+  <form method="POST">
     <div class="container">
       <h3>¿Te gustó este artículo? ¡Dejanos tu comentario!</h3>
       <div class="mb-3">
@@ -36,22 +36,20 @@ $GLOBALS['consulta'] = $bd->mostrar_comentarios(1);
     </div>
   </form>
   <!--AQUI VAN A APARECER LOS COMENTARIOS ANTERIORES-->
-  <tbody>
-    <?php
-                while ($registro=$consulta->fetch_assoc()) {
-                    ?>
-
-    <tr>
-      <td><?php echo $registro['nombre']; ?>
-      </td>
-      <td><?php echo $registro['comentario']; ?>
-      </td>
-
-    </tr>
-    <?php
-                }?>
-  </tbody>
+  <div class="container">
+  <hr>
+  <h3>Comentarios Anteriores</h3><hr>
+  <?php
+    while ($registro=$consulta->fetch_assoc()) {
+        ?>
+  <h5><?php echo $registro['nombre']; ?>
+  :</h5>
+  <p><?php echo $registro['comentario']; ?></p>
+  <?php
+    }?>
+  </div>
   <!---->
+
   <br>
   <div class="toast grid-container" style="position: absolute; bottom: 0; right: 100;">
     <div class="toast-header">
@@ -59,15 +57,12 @@ $GLOBALS['consulta'] = $bd->mostrar_comentarios(1);
     </div>
     <div class="toast-body">
       <?php
-                                $frase = "¡Comentario Guardado!";
-                                echo $frase;
-                                ?>
+      $frase = "¡Comentario Guardado!";
+      echo $frase;
+      ?>
     </div>
   </div>
-  </div>
-  </div>
-  </div>
-  </div>
+
   <script>
     $(document).ready(function() {
       $("#boton2").click(function() {

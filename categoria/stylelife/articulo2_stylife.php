@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="./style_stylelife.css" type="text/css">
     <link rel="stylesheet" href="../style_homepage.css" type="text/css">
     <link rel="stylesheet" href="../../components/component_css.css" type="text/css">
+    <link rel="stylesheet" href="../../components/comments.css" type="text/css">
 </head>
 
 <body id="fondo">
@@ -103,7 +104,10 @@
                     <h2 class="texto_importante">No esperes más y sin duda dales una oportunidad</h2>
                     <br>
                 </div>
-
+    </section>
+    <section>
+    <!-- por cada nivel de carpetas poner " ../ " -->
+    <iframe id="frame_comments" scrolling="no" src="../../components/commentsbox.php?idArticulo=3"></iframe>
     </section>
 </body>
 <footer id="MENU">

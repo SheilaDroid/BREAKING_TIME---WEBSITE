@@ -153,7 +153,7 @@
     </section>
     <section>
     <!-- por cada nivel de carpetas poner " ../ " -->
-    <iframe id="frame_comments" scrolling="no" src="../../components/commentsbox.php"></iframe>
+    <iframe id="frame_comments" scrolling="no" src="../../components/commentsbox.php?idArticulo=1"></iframe>
     </section>
 </body>
 
