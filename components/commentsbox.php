@@ -1,4 +1,28 @@
 <?php
+    //Esto es para hacer la alta de los comentarios
+    if (array_key_exists("button1", $_REQUEST)) {
+        include_once("basedatos.php");
+        $con=new BaseDatos();
+        if ($_REQUEST['username'] == "sin_usuario") {
+          //no se podra comentar si no esta registrado
+          echo "<div class='alert alert-danger' role='alert'>
+          Primero debes registrarte para poder comentar.
+        </div>";
+        } else {
+            $id_usuario=$con->getIdUsuario($_REQUEST['username']);
+            if ($con->guardar_comentarios(
+                $id_usuario,
+                $_REQUEST['idArticulo'],
+                $_REQUEST['comentario'],
+            )) {
+             // echo "todo guardado";
+            } else {
+               // echo "no se pudo guardar comentario";
+            }
+        }
+    }
+?>
+<?php
 include_once('basedatos.php');
 $bd = new BaseDatos();
 $GLOBALS['consulta'] = $bd->mostrar_comentarios($_REQUEST['idArticulo']);
@@ -32,47 +56,28 @@ $GLOBALS['consulta'] = $bd->mostrar_comentarios($_REQUEST['idArticulo']);
       <div class="mb-3">
         <textarea class="form-control" id="comentario" name="comentario" rows="3"></textarea>
       </div>
+      <input type="hidden" id='tiempo_inicio' name='tiempo_inicio' value="">
       <input class="btn btn-primary boton2" type="submit" value="Guardar" name="button1" id="boton2">
     </div>
   </form>
   <!--AQUI VAN A APARECER LOS COMENTARIOS ANTERIORES-->
-  <div class="container">
-  <hr>
-  <h3>Comentarios Anteriores</h3><hr>
-  <?php
+  <div class="container frame_comments">
+    <hr>
+    <h3>Comentarios Anteriores</h3>
+    <hr>
+    <?php
     while ($registro=$consulta->fetch_assoc()) {
         ?>
-  <h5><?php echo $registro['nombre']; ?>
-  :</h5>
-  <p><?php echo $registro['comentario']; ?></p>
-  <?php
+    <h5><?php echo $registro['nombre']; ?>
+      :</h5>
+    <p><?php echo $registro['comentario']; ?>
+    </p>
+    <a href="#">Borrar comentario</a>
+    <hr>
+    <?php
     }?>
   </div>
   <!---->
-
-  <br>
-  <div class="toast grid-container" style="position: absolute; bottom: 0; right: 100;">
-    <div class="toast-header">
-      Aviso
-    </div>
-    <div class="toast-body">
-      <?php
-      $frase = "¡Comentario Guardado!";
-      echo $frase;
-      ?>
-    </div>
-  </div>
-
-  <script>
-    $(document).ready(function() {
-      $("#boton2").click(function() {
-        $('.toast').toast({
-          delay: 2000
-        });
-        $('.toast').toast('show');
-      });
-    });
-  </script>
 </body>
 
 </html>

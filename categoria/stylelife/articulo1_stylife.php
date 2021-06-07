@@ -34,7 +34,8 @@
     <head>
         <!--BARRA DE NAVEGACION-->
         <footer id="MENU">
-            <iframe id="frame_menu" scrolling="no" src="../../components/menu2.php" ?usuario=<?= $usuario; ?>"></iframe>
+            <iframe id="frame_menu" scrolling="no"
+                src="../../components/menu2.php?usuario=<?= $usuario; ?>"></iframe>
         </footer>
         <!-- FIN BARRA DE NAVEGACION-->
     </head>
@@ -152,16 +153,18 @@
 
     </section>
     <section>
-    <!-- por cada nivel de carpetas poner " ../ " -->
-    <iframe id="frame_comments" scrolling="no" src="../../components/commentsbox.php?idArticulo=1"></iframe>
+        <!-- por cada nivel de carpetas poner " ../ " -->
+        <iframe id="frame_comments" scrolling="yes"
+            src="../../components/commentsbox.php?idArticulo=1 & username=<?= $usuario; ?>"></iframe>
     </section>
 </body>
 
-    <!-- por cada nivel de carpetas poner " ../ " -->
-    <!--<iframe id="frame_info" scrolling="no" src="../../components/info.html"></iframe>-->
-    
-    <footer id="MENU">
+<!-- por cada nivel de carpetas poner " ../ " -->
+<!--<iframe id="frame_info" scrolling="no" src="../../components/info.html"></iframe>-->
+
+<footer id="MENU">
     <!-- por cada nivel de carpetas poner " ../ " -->
     <iframe id="frame_info" scrolling="no" src="../../components/info.html"></iframe>
 </footer>
+
 </html>

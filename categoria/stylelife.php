@@ -80,7 +80,7 @@ if(!empty($_GET['usuario'])){
 							<h5 class="card-title titulo_tarjetas">Mejores Apps para tomar Notas en Android</h5>
 							<p class="card-text">Descubre las mejores apps para tu Android para tomar notas y hacer listas.</p>
 							<p class="card-text">Actualizado recientemente</p>
-							<a href="./stylelife/articulo1_stylife.php" target="_parent" class="btn btn-primary color_boton">Leer</a>
+							<a href="./stylelife/articulo1_stylife.php?usuario=<?= $usuario; ?>" target="_parent" class="btn btn-primary color_boton">Leer</a>
 						</div>
 					</div>
 				</div>
@@ -94,7 +94,7 @@ if(!empty($_GET['usuario'])){
 								no dudes en echar un ojo a estos canales.
 							</p>
 							<p class="card-text">Actualizado recientemente</p>
-							<a href="./stylelife/articulo2_stylife.php" class="btn btn-primary color_boton">Leer</a>
+							<a href="./stylelife/articulo2_stylife.php?usuario=<?= $usuario; ?>" class="btn btn-primary color_boton">Leer</a>
 						</div>
 					</div>
 				</div>

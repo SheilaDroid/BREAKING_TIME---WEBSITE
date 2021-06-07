@@ -111,20 +111,15 @@ class BaseDatos
         return $consulta; //retorna consulta para imprimir en html
     }
 
-    public function querayos(){
-        echo "que pex";
-    }
+   
     //guardar comentarios
     public function guardar_comentarios($id_usuario,$id_articulo,$comentario){
-        $sentenciasql = "insert into comentarios (idUsuario,idArticulo,comentario) values ('$id_usuario','$id_articulo,$comentario)";   
+        $sentenciasql = "insert into comentarios (idUsuario,idArticulo,comentario) values ('$id_usuario','$id_articulo','$comentario')";   
         try {
             $GLOBALS['conexion']->query($sentenciasql); //método que genera accion
-    
-            //echo "datos guardados correctamente";
         } catch (mysqli_sql_exception $ex) {
             echo $ex;
         }
-
     }
 
     //borrar comrntario por id 
@@ -134,6 +129,23 @@ class BaseDatos
         } else {
             echo "error al borrar comentario";
         }
+    }
+
+    public function getIdUsuario($username){
+        $sentenciasql = "SELECT id FROM `usuarios` WHERE nombre='$username'";
+        $id_user;
+       // $sentenciasql = "insert into comentarios (idUsuario,idArticulo,comentario) values ('$id_usuario','$id_articulo,$comentario)";   
+        try {
+            $datos=$GLOBALS['conexion']->query($sentenciasql); //método que genera accion
+    
+            //echo "datos guardados correctamente";
+        } catch (mysqli_sql_exception $ex) {
+            echo $ex;
+        }
+        while ($row = $datos->fetch_assoc()) {
+            $id_user=$row['id'];
+        }
+        return $id_user;
     }
 
     //---------------------------------------------- seccion articulos favoritos -------------------------------------------------------
