@@ -91,6 +91,7 @@ class BaseDatos
     }
 
     //---------------------------------------------- seccion de comentarios -------------------------------------------------------
+<<<<<<< Updated upstream
     /*Mostar comentarios
     Muestra los comentarios dependiendo del articulo y tambien muestra el nombre de usuario que hizo el articulo */
     public function mostrar_comentarios($id_articulo)
@@ -102,6 +103,19 @@ class BaseDatos
             //echo "datos guardados correctamente";
         } catch (mysqli_sql_exception $ex) {
             echo $ex;
+=======
+    //mostrar comentarios
+    public function mostrar_comentarios(){
+        $sentenciaSQL="select * from informacion where id='$id'";
+        if ($consulta=$GLOBALS['conexion']->query($sentenciaSQL)) {//la variable registro guardara lo que se extraiga de la bd
+            echo "Consulta Exitosa";
+            $registro=$consulta->fetch_assoc();
+            echo "<br>". $registro['noControl']." / ".
+            $registro['nombre']." / ".$registro['fecha_nac']." / ".$registro['edad']
+            ." / ".$registro['sexo'];
+        } else {
+            echo "Consulta Erronea :(";
+>>>>>>> Stashed changes
         }
     }
     //guardar comentarios
@@ -110,7 +124,6 @@ class BaseDatos
         $sentenciasql = "insert into comentarios (idUsuario,idArticulo,comentario) values ('$id_usuario','$id_articulo,$comentario)";
         try {
             $GLOBALS['conexion']->query($sentenciasql); //método que genera accion
-    
             //echo "datos guardados correctamente";
         } catch (mysqli_sql_exception $ex) {
             echo $ex;

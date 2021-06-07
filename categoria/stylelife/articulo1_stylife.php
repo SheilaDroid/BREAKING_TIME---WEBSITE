@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="./style_stylelife.css" type="text/css">
     <link rel="stylesheet" href="../style_homepage.css" type="text/css">
     <link rel="stylesheet" href="../../components/component_css.css" type="text/css">
+    <link rel="stylesheet" href="../../components/comments.css" type="text/css">
 </head>
 
 <body id="fondo">
@@ -150,10 +151,17 @@
         </div>
 
     </section>
+    <section>
+    <!-- por cada nivel de carpetas poner " ../ " -->
+    <iframe id="frame_comments" scrolling="no" src="../../components/commentsbox.php"></iframe>
+    </section>
 </body>
-<footer id="MENU">
+
+    <!-- por cada nivel de carpetas poner " ../ " -->
+    <!--<iframe id="frame_info" scrolling="no" src="../../components/info.html"></iframe>-->
+    
+    <footer id="MENU">
     <!-- por cada nivel de carpetas poner " ../ " -->
     <iframe id="frame_info" scrolling="no" src="../../components/info.html"></iframe>
 </footer>
-
 </html>
