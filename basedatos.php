@@ -61,9 +61,17 @@ class BaseDatos
 
     //---------------------------------------------- seccion tabla usuarios -------------------------------------------------------
 
+     //---------------------------------------------- seccion tabla usuarios -------------------------------------------------------
+    // consultar usuario
+    public function consulta($usuario){
+        if($consulta=$GLOBALS['conexion']->query("select * from usuarios where nombre='$usuario'")){
+        }else{
+        }
+        return $consulta;
+    }
     //guardar usuario
-    public function guardar_usuario($nombre,$correo,$password,$sexo,$tipo){
-        $sentenciasql = "insert into usuarios (nombre,correo,password,sexo,tipo) values ('$nombre','$correo,$password,$tipo')";   
+    public function gurdar_usuario($nombre,$correo,$password,$sexo,$tipo){
+        $sentenciasql = "insert into usuarios (nombre,correo,password,sexo,tipo) values ('$nombre','$correo','$password','$sexo','$tipo')";   
         try {
             $GLOBALS['conexion']->query($sentenciasql); //método que genera accion
     
@@ -74,7 +82,7 @@ class BaseDatos
 
     }
     //borrar usuario por nombre
-    public function borrarUsuario($nombre){
+    public function borrar_usuario($nombre){
         if ($GLOBALS['conexion']->query("delete from usuarios where  nombre='$nombre'")) {
             echo "usuario borrado con exito";
         } else {
@@ -83,7 +91,7 @@ class BaseDatos
     }
 
      //borrar usuario por id
-    public function borrarUsuarioId($id_usuario){
+    public function borrar_usuarioId($id_usuario){
         if ($GLOBALS['conexion']->query("delete from usuarios where  id='$id_usuario'")) {
             echo "usuario borrado con exito";
         } else {
