@@ -58,12 +58,12 @@ class BaseDatos
         }
         return $cantidad_likes; //retorna el numero de likes
     }
-    
+
      //---------------------------------------------- seccion tabla usuarios -------------------------------------------------------
     // consultar usuario
     public function consulta($usuario){
         if($consulta=$GLOBALS['conexion']->query("select * from usuarios where nombre='$usuario'")){
-            echo "Consulta de usuario exitosa"
+            echo "Consulta de usuario exitosa";
         }else{
             echo "Error consultar usuario";
         }
