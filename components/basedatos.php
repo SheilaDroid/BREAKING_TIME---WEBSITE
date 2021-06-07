@@ -96,6 +96,24 @@ class BaseDatos
     }
 
     //---------------------------------------------- seccion de comentarios -------------------------------------------------------
+    /*Mostar comentarios
+    Muestra los comentarios dependiendo del articulo y tambien muestra el nombre de usuario que hizo el articulo */
+    public function mostrar_comentarios($id_articulo)
+    {
+        $sentenciasql = "SELECT usuarios.nombre, comentarios.comentario FROM usuarios JOIN comentarios ON usuarios.id = comentarios.idUsuario 
+        WHERE comentarios.idArticulo=".$id_articulo."";
+        try {
+            $consulta=$GLOBALS['conexion']->query($sentenciasql); //método que genera accion
+            //echo "datos guardados correctamente";
+        } catch (mysqli_sql_exception $ex) {
+            echo $ex;
+        }
+        return $consulta; //retorna consulta para imprimir en html
+    }
+
+    public function querayos(){
+        echo "que pex";
+    }
     //guardar comentarios
     public function guardar_comentarios($id_usuario,$id_articulo,$comentario){
         $sentenciasql = "insert into comentarios (idUsuario,idArticulo,comentario) values ('$id_usuario','$id_articulo,$comentario)";   
@@ -107,10 +125,6 @@ class BaseDatos
             echo $ex;
         }
 
-    }
-
-    public function prueba($id){
-        echo "yo si funciono";
     }
 
     //borrar comrntario por id 
