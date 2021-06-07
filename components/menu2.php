@@ -31,7 +31,7 @@
 	              <a class="nav-link letrasNav" href="../categoria/videojuegos.php?usuario=<?= $usuario; ?>" target="_parent">Videojuegos</a>
 	            </li>
 	            <li class="nav-item">
-	              <a class="nav-link letrasNav" href="../categoria/hacking.html" target="_parent">Hacking</a>
+	              <a class="nav-link letrasNav" href="../categoria/hacking.php?usuario=<?= $usuario; ?> " target="_parent">Hacking</a>
 	            </li>
 	            <li class="nav-item">
 	              <a class="nav-link letrasNav" href="../categoria/computacion.html" target="_parent">Computación</a>
