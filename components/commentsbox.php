@@ -1,7 +1,7 @@
 <?php
 include_once('basedatos.php');
-$bd= new BaseDatos();
-$GLOBALS['consulta'] = $bd -> mostrar_comentarios(1);
+$bd = new BaseDatos();
+$GLOBALS['consulta'] = $bd->mostrar_comentarios(1);
 //imprimir todos los registros en html, se recibe en una variable
 ?>
 <!DOCTYPE html>

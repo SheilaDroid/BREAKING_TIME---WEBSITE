@@ -1,5 +1,5 @@
 <?php
-class BaseDatos
+class BaseDatos2
 {
     public $conexion; //guardar el id de la conexion
     public $servidor = "127.0.0.1"; //dominio o ip
@@ -166,13 +166,6 @@ class BaseDatos
             echo $ex;
         }
     }
-    //borrra articulo de favoritos
-    public function borrar_artFavorito($id_usuario, $id_articulo)
-    {
-        if ($GLOBALS['conexion']->query("delete from artFavoritos where  idUsuario='$id_usuario' and idArticulo= '$id_articulo'")) {
-            echo "articulo favorito borrado con exito";
-        } else {
-            echo "error al borrar articulo favorito";
-        }
-    }
+   
+
 }
