@@ -14,7 +14,9 @@ class BaseDatos
     {
 
         if ($GLOBALS['conexion'] = new mysqli($this->servidor, $this->usuario, $this->contrasena, $this->nombreDB)) {
+            echo "conexión exitosa";
         } else {
+            echo "error de conexion";
         }
 
     }
@@ -57,16 +59,18 @@ class BaseDatos
         return $cantidad_likes; //retorna el numero de likes
     }
 
-    //---------------------------------------------- seccion tabla usuarios -------------------------------------------------------
+     //---------------------------------------------- seccion tabla usuarios -------------------------------------------------------
     // consultar usuario
     public function consulta($usuario){
         if($consulta=$GLOBALS['conexion']->query("select * from usuarios where nombre='$usuario'")){
+            echo "Consulta de usuario exitosa";
         }else{
+            echo "Error consultar usuario";
         }
         return $consulta;
     }
     //guardar usuario
-    public function gurdar_usuario($nombre,$correo,$password,$sexo,$tipo){
+    public function guardar_usuario($nombre,$correo,$password,$sexo,$tipo){
         $sentenciasql = "insert into usuarios (nombre,correo,password,sexo,tipo) values ('$nombre','$correo','$password','$sexo','$tipo')";   
         try {
             $GLOBALS['conexion']->query($sentenciasql); //método que genera accion
@@ -87,7 +91,7 @@ class BaseDatos
     }
 
      //borrar usuario por id
-    public function borrar_artFavoritoId($id_usuario){
+    public function borrar_usuarioId($id_usuario){
         if ($GLOBALS['conexion']->query("delete from usuarios where  id='$id_usuario'")) {
             echo "usuario borrado con exito";
         } else {
@@ -164,8 +168,5 @@ class BaseDatos
             echo "error al borrar articulo favorito";
         }
     }
-
-   
-
 }
 ?>

@@ -1,5 +1,12 @@
-<html>
+<?php
+if(!empty($_GET['usuario'])){
+    $usuario=$_GET['usuario'];
+}else{
+    $usuario="sin_usuario";
+}
+?>
 
+<html>
 <head>
 	<!-- PONER AQUI EL NOMBRE DE LA CATEGORIA-->
 	<title>Hacking</title>
@@ -17,16 +24,16 @@
 		crossorigin="anonymous"></script>
 	<!--hoja del css-->
 	<link rel="stylesheet" href="./css/stylehacking.css" type="text/css">
-	<link rel="stylesheet" href="../style_homepage.css" type="text/css">
 	<link rel="stylesheet" href="../components/component_css.css" type="text/css">
 </head>
 
 <body class="principal">
 	<head>
-		<!--BARRA DE NAVEGACION-->
-		<footer id="MENU">
-	        <iframe id="frame_menu" scrolling="no" src="../components/menu2.php"></iframe> 
-	    </footer><!-- FIN BARRA DE NAVEGACION-->
+    <!--BARRA DE NAVEGACION-->
+    <footer id="MENU">
+        <iframe id="frame_menu" scrolling="no"  src="../components/menu2.php?usuario=<?= $usuario; ?>"></iframe> 
+    </footer>
+    <!-- FIN BARRA DE NAVEGACION-->
 	</head>
 	<section>
 		<!--imagen principal -->
@@ -68,9 +75,9 @@
 					<div class="col">
 						<div class="card pre-card marco">
 							<!--imagen articulo 1,1-->
-							<a href="./hacking/articulo1.html"><img src="./imagenes/articuloH1.jpg" class="card-img-top" alt="..."></a>
+							<a href="./hacking/articulo1.php?usuario=<?= $usuario; ?>"><img src="./imagenes/articuloH1.jpg" class="card-img-top" alt="..."></a>
 							<div class="card-body">
-								<a href="./hacking/articulo1.html" class="quitar_efecto_link">
+								<a href="./hacking/articulo1.php?usuario=<?= $usuario; ?>" class="quitar_efecto_link">
 									<h5 class="card-title">¿CÓMO HACKEAR TIKTOK?</h5>
 								</a>
 								<p class="card-text">Tik tok es una red social que consiste en compartir videos en línea, en el 2020 ha conseguido reunir millones de usuarios para esta plataforma, por ello te mostraremos las diferente formas de hackear una cuenta de Tik Tok.</p><a href="./hacking/articulo1.html" class="quitar_efecto_link">Leer
@@ -81,9 +88,9 @@
 					<div class="col">
 						<div class="card pre-card marco">
 							<!--imagen articulo 1,2-->
-							<a href="./hacking/articulo2.html"><img src="./imagenes/articuloH2.jpg" class="card-img-top" alt="..."></a>
+							<a href="./hacking/articulo2.php?usuario=<?= $usuario; ?>"><img src="./imagenes/articuloH2.jpg" class="card-img-top" alt="..."></a>
 							<div class="card-body">
-								<a href="./hacking/articulo2.html" class="quitar_efecto_link">
+								<a href="./hacking/articulo2.php?usuario=<?= $usuario; ?>" class="quitar_efecto_link">
 									<h5 class="card-title">COMO HACKEAR UN PERFIL DE FACEBOOK</h5>
 								</a>
 								<p class="card-text">Aquí vas a aprender las maneras más fáciles de hackear Facebook, te invito a leer estos sencillos métodos que también sirven para evitar que te puedan hackear Twitter, gmail o cualquier otra red social.</p><a href="./hacking/articulo2.html"
@@ -94,9 +101,9 @@
 					<div class="col">
 						<div class="card pre-card marco">
 							<!--imagen articulo 1,3-->
-							<a href=""><img src="./imagenes/articuloH3.1.jpg" class="card-img-top" alt="..."></a>
+							<a href="#"><img src="./imagenes/articuloH3.1.jpg" class="card-img-top" alt="..."></a>
 							<div class="card-body">
-								<a href="" class="quitar_efecto_link">
+								<a href="#" class="quitar_efecto_link">
 									<h5 class="card-title">¿QUÉ ES UN XPLOITZ Y COMO SE UTILIZA?</h5>
 								</a>
 								<p class="card-text">Primero que todo hay un par de puntos que aclarar, un Exploit no es lo mismo que un Xploitz. El primero es un programa informático o un comando que provoca comportamientos imprevistos en un software/hardware.</p><a href="" class="quitar_efecto_link">Leer
@@ -111,9 +118,9 @@
 					<div class="col">
 						<div class="card pre-card marco">
 							<!--imagen articulo 2,1-->
-							<a href=""><img src="./imagenes/articuloH4.jpg" class="card-img-top" alt="..."></a>
+							<a href="#"><img src="./imagenes/articuloH4.jpg" class="card-img-top" alt="..."></a>
 							<div class="card-body">
-								<a href="" class="quitar_efecto_link">
+								<a href="#" class="quitar_efecto_link">
 									<h5 class="card-title">HACKEAR CONTRASEÑAS ALMACENADAS</h5>
 								</a>
 								<p class="card-text">Una de las maneras más fáciles de conseguir hackear contraseñas o credenciales de cuentas de correos electrónicos, de cuentas de facebook, instagram y un larguísimo etcétera es mediante el uso de contraseñas almacenadas.</p><a href="" class="quitar_efecto_link">Leer
@@ -124,9 +131,9 @@
 					<div class="col">
 						<div class="card pre-card marco">
 							<!--imagen articulo 2,2-->
-							<a href=""><img src="./imagenes/articuloH5.jpg" class="card-img-top" alt="..."></a>
+							<a href="#"><img src="./imagenes/articuloH5.jpg" class="card-img-top" alt="..."></a>
 							<div class="card-body">
-								<a href="" class="quitar_efecto_link">
+								<a href="#" class="quitar_efecto_link">
 									<h5 class="card-title">COMO CREAR UN KEYLOGGER</h5>
 								</a>
 								<p class="card-text">El Keylogger es un software de malware muy utilizado en el mundo del Hack. Este malware nos permite registrar todo el contenido introducido en el teclado de la persona que utilice el dispositivo.</p><a href="" class="quitar_efecto_link">Leer
@@ -137,9 +144,9 @@
 					<div class="col">
 						<div class="card pre-card marco">
 							<!--imagen articulo 2,3-->
-							<a href=""><img src="./imagenes/articuloH6.jpg" class="card-img-top" alt="..."></a>
+							<a href="#"><img src="./imagenes/articuloH6.jpg" class="card-img-top" alt="..."></a>
 							<div class="card-body">
-								<a href="" class="quitar_efecto_link">
+								<a href="#" class="quitar_efecto_link">
 									<h5 class="card-title">COMO HACKEAR UNA CUENTA DE TWITTER</h5>
 								</a>
 								<p class="card-text">Últimamente la red social Twitter se ha visto envuelta en múltiples casos de Hackeo a cuentas de sus usuarios, incluso a la misma red de twitter, con el hackeo masivo a cuentas de personajes famosos.</p><a href="" class="quitar_efecto_link">Leer
@@ -153,46 +160,8 @@
 	</section>
 
 </body>
-<footer>
-	<section>
-		<div class="grid-container" id="footer_color">
-			<div class="container-fluid col" style="margin-top:1cm;">
-				<a href="../index.html" target="_parent">
-					<h3 id="footer_title">Breaking Time</h3>
-				</a>
-				<div class="row" id="fandom">
-					<!--Primer columna: EXPLORE PROPERTIES Y FOLLOW US-->
-					<div class="col-md-3 offset-4">
-						<h5 id="titulos_footer">Categorías
-						</h5>
-						<p class="footer_lista">
-							<a class="footer_lista" href="./videojuegos.html" target="_parent">Videojuegos</a><br>
-							<a class="footer_lista" href="./hacking.html" target="_parent">Hacking</a><br>
-							<a class="footer_lista" href="./computacion.html" target="_parent">Computación</a><br>
-							<a class="footer_lista" href="./stylelife.html" target="_parent">Estilo de Vida</a><br>
-						</p>
-					</div>
-
-					<div class="col-md-3">
-						<h5 id="titulos_footer">Acerca de</h5>
-						<p class="footer_lista">
-							<a class="footer_lista" href="#" target="_blank">¿Qué es Breaking Time?</a><br>
-						</p>
-						<h5 id="titulos_footer">Follow Us
-						</h5>
-						<div style="display:inline-block;">
-							<img src="../imagenes/facebook.png" class="img-fluid img_footer" alt="img-thumbnail">
-							<img src="../imagenes/twitter.png" class="img-fluid img_footer" alt="img-thumbnail">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--SECCION DONDE VA EL COPYRIGHT-->
-	<div class="grid-container derechos">
-		<p id="copy">Copyright 2021 Breaking Time</p>
-	</div>
+<footer id="MENU"><!-- por cada nivel de carpetas poner " ../ " --> 
+	<iframe id="frame_info" scrolling="no"  src="../components/info.html"></iframe>
 </footer>
 
 </html>
