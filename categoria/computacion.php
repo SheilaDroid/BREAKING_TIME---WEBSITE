@@ -1,5 +1,4 @@
 <html>
-
 <head>
 	<!-- PONER AQUI EL NOMBRE DE LA CATEGORIA-->
 	<title>Computación y Tecnología</title>
@@ -15,75 +14,52 @@
 		integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
 		crossorigin="anonymous"></script>
 	<!--hoja del css-->
+	<link rel="stylesheet" href="../components/component_css.css" type="text/css">
 	<link rel="stylesheet" href="./formato.css" type="text/css">
 	<link rel="stylesheet" href="../style_homepage.css" type="text/css">
 </head>
 
 <body>
-
-	<head>
-		<!--Barra de Navegación-->
-		<nav class="navbar navbar-expand-lg up">
-			<div class="container-fluid d-flex justify-content-evenly navega">
-				<a class="navbar-brand" href="../index.html" target="_parent">
-					<img src="./imagenes/coffee-time.png" width="50" height="50" alt="">
-				</a>
-				<a class="navbar-brand letrasNav" id="principal" href="../index.html" target="_parent">BREAKING TIME</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<!--Elementos de la navbar-->
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item">
-							<a class="nav-link letrasNav" href="videojuegos.html" target="_parent">Videojuegos</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link letrasNav" href="hacking.html" target="_parent">Hacking</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link letrasNav" href="computacion.html" target="_parent">Computación</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link letrasNav" href="stylelife.html" target="_parent">Estilo de Vida</a>
-						</li>
-					</ul>
-				</div>
-				<!--Buscador-->
-				<form class="form-inline buscador">
-					<input class="form-control mr-sm-2 mover_buscador" type="search" placeholder="Buscar..."
-						aria-label="Search">
-					<button class="btn btn-info mover_boton_buscador" type="submit">Buscar</button>
-				</form>
-		</nav>
-	</head>
+	<?php
+	if(!empty($_GET['usuario'])){
+		$usuario=$_GET['usuario'];
+	}else{
+		$usuario="sin_usuario";
+	}
+	?>
+	<header>
+		<!--BARRA DE NAVEGACION-->
+		<footer id="MENU">
+			<iframe id="frame_menu" scrolling="no"
+				src="../components/menu2.php?usuario=<?= $usuario; ?>"></iframe>
+		</footer><!-- FIN BARRA DE NAVEGACION-->
+	</header>
+	
 	<section>
 		<!--imagen principal -->
 		<nav class="text-center">
-			<img src="./imagenes/portada-computacion.jpg" class="img-fluid dimensiones_imagen " alt="...">
+			<img src="./imagenes/portada-computacion.jpg" class="img-fluid dimensiones_imagen" alt="...">
 		</nav>
-
 	</section>
+
 	<section class="fondo1">
 		<nav>
 			<div class="nose">
 				<pre><h2 class="texto_destacados">  DESTACADOS</h2></pre>
 				<figure class="figure">
 					<!--imagen destacado 1-->
-					<a href="computación/mediatek-noticia.html"><img src="./imagenes/mediatek-noticia.jpg"
+					<a href="computación/mediatek-noticia.php?usuario=<?= $usuario; ?>"><img src="./imagenes/mediatek-noticia.jpg"
 							class="figure-img img-fluid rounded dimensiones_imagen1_destacado" alt="..."></a>
 				</figure>
 				<figure class="figure">
 					<!--imagen destacado 2-->
-					<a href="computación/imac-noticia.html"><img src="./imagenes/iMac-noticia.jpg"
+					<a href="computación/imac-noticia.php?usuario=<?= $usuario; ?>"><img src="./imagenes/iMac-noticia.jpg"
 							class="figure-img img-fluid rounded dimensiones_imagen2_destacado d-flex justify-content-between"
 							alt="..."></a>
 				</figure>
 				<figure class="figure">
 					<!--imagen destacado 3-->
-					<a href="computación/padron-noticia.html"><img src="./imagenes/padron-noticia.jpg"
+					<a href="computación/padron-noticia.php?usuario=<?= $usuario; ?>"><img src="./imagenes/padron-noticia.jpg"
 							class="figure-img img-fluid rounded dimensiones_imagen3_destacado d-flex justify-content-between"
 							alt="..."></a>
 				</figure>
@@ -100,10 +76,10 @@
 						<div class="card pre-card marco">
 							<!--imagen articulo 1,1-->
 							<!--	https://computerhoy.com/noticias/tecnologia/procesadores-4-nanometros-estarian-cerca-llegarian-mano-mediatek-851257	-->
-							<a href="computación/mediatek-noticia.html"><img src="./imagenes/mediatek-noticia.jpg"
+							<a href="computación/mediatek-noticia.php?usuario=<?= $usuario; ?>"><img src="./imagenes/mediatek-noticia.jpg"
 									class="card-img-top" alt="..."></a>
 							<div class="card-body">
-								<a href="computación/mediatek-noticia.html" class="quitar_efecto_link">
+								<a href="computación/mediatek-noticia.php?usuario=<?= $usuario; ?>" class="quitar_efecto_link">
 									<h5 class="card-title">Último en procesadores</h5>
 								</a>
 								<p class="card-text">Los procesadores de 4 nanómetros estarían más cerca y llegarían de
@@ -117,14 +93,14 @@
 						<div class="card pre-card marco">
 							<!--imagen articulo 1,2-->
 							<!--	https://computerhoy.com/noticias/tecnologia/microsoft-va-arreglar-fin-terrible-app-store-windows-10-851277	-->
-							<a href="computación/windows-noticia.html"><img src="./imagenes/windowsstore-noticia.jpg"
+							<a href="#"><img src="./imagenes/windowsstore-noticia.jpg"
 									class="card-img-top" alt="..."></a>
 							<div class="card-body">
-								<a href="computación/windows-noticia.html" class="quitar_efecto_link">
+								<a href="#" class="quitar_efecto_link">
 									<h5 class="card-title">Cambios en la store de windows</h5>
 								</a>
 								<p class="card-text">Microsoft va a arreglar por fin su terrible App Store de Windows 10
-								</p><a href="computación/windows-noticia.html" class="quitar_efecto_link">Leer
+								</p><a href="#" class="quitar_efecto_link">Leer
 									mas..</a>
 							</div>
 						</div>
@@ -133,14 +109,13 @@
 						<div class="card pre-card marco">
 							<!--imagen articulo 1,3-->
 							<!--	https://www.xataka.com.mx/ordenadores/nuevo-imac-m1-precio-fecha-lanzamiento-oficial-mexico	-->
-							<a href=""><img src="./imagenes/iMac-noticia.jpg" class="card-img-top" alt="..."></a>
+							<a href="./computación/imac-noticia.php?usuario=<?= $usuario; ?>"><img src="./imagenes/iMac-noticia.jpg" class="card-img-top" alt="..."></a>
 							<div class="card-body">
-								<a href="" class="quitar_efecto_link">
+								<a href="./computación/imac-noticia.php?usuario=<?= $usuario; ?>" class="quitar_efecto_link">
 									<h5 class="card-title">Nuevas iMac</h5>
 								</a>
-								<p class="card-text">Estos son los iMac con Apple M1, una explosión de color</p><a
-									href="" class="quitar_efecto_link">Leer
-									mas..</a>
+								<p class="card-text">Estos son los iMac con Apple M1, una explosión de color</p>
+								<a href="./computación/imac-noticia.php?usuario=<?= $usuario; ?>" class="quitar_efecto_link">Leer mas..</a>
 							</div>
 						</div>
 					</div>
@@ -152,13 +127,13 @@
 						<div class="card pre-card marco">
 							<!--imagen articulo 2,1-->
 							<!--	https://www.bbc.com/mundo/noticias-america-latina-56813026	-->
-							<a href=""><img src="./imagenes/padron-noticia.jpg" class="card-img-top" alt="..."></a>
+							<a href="./computación/padron-noticia.php?usuario=<?= $usuario; ?>"><img src="./imagenes/padron-noticia.jpg" class="card-img-top" alt="..."></a>
 							<div class="card-body">
-								<a href="" class="quitar_efecto_link">
+								<a href="./computación/padron-noticia.php?usuario=<?= $usuario; ?>" class="quitar_efecto_link">
 									<h5 class="card-title">Padrón de telefonía móvil en México</h5>
 								</a>
 								<p class="card-text">Las grandes dudas que provoca el registro obligatorio que requiere
-									tus datos biométricos</p><a href="" class="quitar_efecto_link">Leer
+									tus datos biométricos</p><a href="./computación/padron-noticia.php?usuario=<?= $usuario; ?>" class="quitar_efecto_link">Leer
 									mas..</a>
 							</div>
 						</div>
@@ -198,47 +173,10 @@
 			<br><br>
 	</section>
 
+	<footer id="MENU">
+		<!-- por cada nivel de carpetas poner " ../ " -->
+		<iframe id="frame_info" scrolling="no" src="../components/info.html"></iframe>
+	</footer>
 </body>
-<footer>
-	<section>
-		<div class="grid-container" id="footer_color">
-			<div class="container-fluid col" style="margin-top:1cm;">
-				<a>
-					<h3 id="footer_title">Breaking Time</h3>
-				</a>
-				<div class="row" id="fandom">
-					<!--Primer columna: EXPLORE PROPERTIES Y FOLLOW US-->
-					<div class="col-md-3 offset-4">
-						<h5 id="titulos_footer">Categorías
-						</h5>
-						<p class="footer_lista">
-							<a class="footer_lista" href="./videojuegos.html" target="_parent">Videojuegos</a><br>
-							<a class="footer_lista" href="./hacking.html" target="_parent">Hacking</a><br>
-							<a class="footer_lista" href="./computacion.html" target="_parent">Computación</a><br>
-							<a class="footer_lista" href="./stylelife.html" target="_parent">Estilo de Vida</a><br>
-						</p>
-					</div>
-
-					<div class="col-md-3">
-						<h5 id="titulos_footer">Acerca de</h5>
-						<p class="footer_lista">
-							<a class="footer_lista" href="#" target="_blank">¿Qué es Breaking Time?</a><br>
-						</p>
-						<h5 id="titulos_footer">Follow Us
-						</h5>
-						<div style="display:inline-block;">
-							<img src="../imagenes/facebook.png" class="img-fluid img_footer" alt="img-thumbnail">
-							<img src="../imagenes/twitter.png" class="img-fluid img_footer" alt="img-thumbnail">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--SECCION DONDE VA EL COPYRIGHT-->
-	<div class="grid-container derechos">
-		<p id="copy">Copyright 2021 Breaking Time</p>
-	</div>
-</footer>
 
 </html>
