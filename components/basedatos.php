@@ -49,12 +49,16 @@ class BaseDatos
 
     //mostrar numero de likes por articulo
     public function consulta_nolikes($Id){
+        $cantidad_likes;
         if ($consulta = $GLOBALS['conexion']->query("select likes from articulos where id= '$Id'")) {
-            echo "éxito consulta";
+            //echo "éxito consulta";
         } else {
-            echo "Error consulta";
+            //echo "Error consulta";
         }
-        return $cantidad_likes; //retorna el numero de likes
+        while ($row = $consulta->fetch_assoc()) {
+            $cantidad_likes=$row['likes'];
+        }
+        echo "A ".$cantidad_likes." personas les gusta esto."; //retorna el numero de likes
     }
 
     //---------------------------------------------- seccion tabla usuarios -------------------------------------------------------

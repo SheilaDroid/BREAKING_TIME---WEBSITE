@@ -74,7 +74,12 @@ $GLOBALS['consulta'] = $bd->mostrar_comentarios($_REQUEST['idArticulo']);
         $id_usuario_c=$registro['idUsuario'];
         $idcm=$registro['id'];
         $obj=new BaseDatos();
-        $id_usuario=$obj->getIdUsuario($_REQUEST['username']); ?>
+        if ($_REQUEST['username'] != "sin_usuario") {
+          $id_usuario=$obj->getIdUsuario($_REQUEST['username']); 
+        }else{
+          $id_usuario="";
+        }?>
+       
     <h5><?php echo $registro['nombre']; ?>
       :</h5>
     <p><?php echo $registro['comentario']; ?>
