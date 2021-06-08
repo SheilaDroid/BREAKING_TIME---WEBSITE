@@ -27,10 +27,12 @@
 
 <body>
   <head>
+
     <!--BARRA DE NAVEGACION-->
     <footer id="MENU"><!-- por cada nivel de carpetas poner " ../ " --> 
         <iframe id="frame_menu" scrolling="no" src="../../components/menu2.php?usuario=<?= $usuario; ?>"></iframe> 
     </footer>
+    
     <!-- FIN BARRA DE NAVEGACION-->
   </head>
 

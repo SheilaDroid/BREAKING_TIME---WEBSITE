@@ -23,16 +23,19 @@ if(!empty($_GET['usuario'])){
 		integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
 		crossorigin="anonymous"></script>
 	<!--hoja del css-->
-	<link rel="stylesheet" href="./css/stylehacking.css" type="text/css">
 	<link rel="stylesheet" href="../components/component_css.css" type="text/css">
+	<link rel="stylesheet" href="./css/stylehacking.css" type="text/css">
+
 </head>
 
 <body class="principal">
+
 	<head>
     <!--BARRA DE NAVEGACION-->
     <footer id="MENU">
         <iframe id="frame_menu" scrolling="no"  src="../components/menu2.php?usuario=<?= $usuario; ?>"></iframe> 
     </footer>
+
     <!-- FIN BARRA DE NAVEGACION-->
 	</head>
 	<section>
