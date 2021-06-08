@@ -2,18 +2,34 @@
 include_once('./components/basedatos.php');
 $BD=new BaseDatos();
 if(!empty($_REQUEST['contraseña'])&&!empty($_REQUEST['c_contraseña'])){
+
 	if($_REQUEST['contraseña']==$_REQUEST['c_contraseña']){
 		if(!empty($_REQUEST['usuario'])&&!empty($_REQUEST['correo'])&&!empty($_REQUEST['sexo'])){
-			$usuario=$_REQUEST['usuario'];
-			
-			$BD->gurdar_usuario($_REQUEST['usuario'],$_REQUEST['correo'],$_REQUEST['contraseña'],$_REQUEST['sexo'],"user");
+			//VERIFICAR SI NO EXISTE EL USUARIO
+			$GLOBALS['consulta']=$BD->consulta($_REQUEST['usuario']);
+			$registro=$GLOBALS['consulta'];
+			//saco el id del usuario
+			while ($registro=$GLOBALS['consulta']->fetch_assoc()) {
+				if($registro['nombre']!=$_REQUEST['usuario']){
+					$usuario=$_REQUEST['usuario'];
+					
+					$BD->gurdar_usuario($_REQUEST['usuario'],$_REQUEST['correo'],$_REQUEST['contraseña'],$_REQUEST['sexo'],"user");
 
-			header('Location:./index.php?usuario='.$usuario);
-			exit();
+					header('Location:./index.php?usuario='.$usuario);
+					exit();
+				}else{
+					?>
+					<center><h1 class="text_alert">usuario existente</h1></center>
+					<?php 
+				}
+			}
+			//
 		}
 		
 	}else{
-		echo "La contraseña debe ser igual ";
+		?>
+		<center><h1 class="text_alert">La contraseña debe ser igual</h1></center>
+		<?php 
 		//header('Location:index.html');
 	}
 }

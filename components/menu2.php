@@ -52,7 +52,7 @@
 	        	if(!empty($_GET['usuario'])&&$_GET['usuario']!="sin_usuario"){
 	        			$usuario=$_GET['usuario'];
 	        		?>
-	        	<a href="../login.php" target="_parent"><button class="boton-user"><?php echo $usuario ?></button></a><?php  
+	        	<a href="../cuenta.php?usuario=<?= $usuario;?>" target="_parent"><button class="boton-user"><?php echo $usuario ?></button></a><?php  
 	        	}else{
 	        		?>
 	        	<a href="../login.php" target="_parent"><button class="boton-user">Inicio Sesion</button></a>

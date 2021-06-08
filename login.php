@@ -3,7 +3,6 @@
 	$BD=new BaseDatos();
 	
 	if(!empty($_REQUEST['usuario'])&&!empty($_REQUEST['password'])){
-	echo "si entro 2";
 		$GLOBALS['consulta']=$BD->consulta($_REQUEST['usuario']);
 		$registro=$GLOBALS['consulta'];
 		while ($registro=$GLOBALS['consulta']->fetch_assoc()) {
