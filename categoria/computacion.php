@@ -29,7 +29,7 @@
 	?>
 	<header>
 		<!--BARRA DE NAVEGACION-->
-		<footer id="MENU">
+		<footer id="MENU" >
 			<iframe id="frame_menu" scrolling="no"
 				src="../components/menu2.php?usuario=<?= $usuario; ?>"></iframe>
 		</footer><!-- FIN BARRA DE NAVEGACION-->

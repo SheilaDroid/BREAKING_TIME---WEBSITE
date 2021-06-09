@@ -103,3 +103,7 @@ color: white;
 .quitar_efecto_link:hover{
 	color: red;
 }
+
+.ajusteHeader{
+	height: 20px;
+}

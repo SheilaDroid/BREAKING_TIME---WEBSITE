@@ -38,7 +38,7 @@
 	<header>
 		<!--BARRA DE NAVEGACION-->
 		<footer id="MENU">
-			<iframe id="frame_menu" scrolling="no"
+			<iframe id="frame_menu" scrolling="no" style="height: 60px;"
 				src="../../components/menu2.php?usuario=<?= $usuario; ?>"></iframe>
 		</footer><!-- FIN BARRA DE NAVEGACION-->
 	</header>
