@@ -21,6 +21,7 @@
 		crossorigin="anonymous"></script>
 	<!--hoja del css-->
 	<link rel="stylesheet" href="../../components/component_css.css" type="text/css">
+	<link rel="stylesheet" href="../../components/comments.css" type="text/css">
 	<link rel="stylesheet" href="style.css" type="text/css">
 	<link rel="stylesheet" href="../formato.css" type="text/css">
 	<link rel="stylesheet" href="../../style_homepage.css" type="text/css">
@@ -49,6 +50,8 @@
 			<h1 class="titulos">Padrón de telefonía móvil en México: las grandes dudas que provoca el registro
 				obligatorio que requiere tus datos biométricos</h1>
 			<img class="imgPortada" src="../imagenes/padron-noticia.jpg">
+
+			<iframe id="frame_likes" scrolling="yes" style="height: 50px; width: 60%;" src="../../components/likesframe.php?idArticulo=13 & username=<?= $usuario; ?>"></iframe>
 
 			<div id="datosPublicación">
 				<div id="autorLabel">
@@ -138,6 +141,7 @@
 					</p>
 			</div>
 		</div>
+		<iframe id="frame_comments" scrolling="yes" src="../../components/commentsbox.php?idArticulo=13 & username=<?= $usuario; ?>"></iframe>	
 	</section>
 
 	<section>
@@ -197,7 +201,6 @@
 	<!--	Fin Noticia	-->
 
 	<footer id="MENU">
-		<!-- por cada nivel de carpetas poner " ../ " -->
 		<iframe id="frame_info" scrolling="no" src="../../components/info.html"></iframe>
 	</footer>
 </body>

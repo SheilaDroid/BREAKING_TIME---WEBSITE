@@ -21,6 +21,7 @@
 		crossorigin="anonymous"></script>
 	<!--hoja del css-->
 	<link rel="stylesheet" href="../../components/component_css.css" type="text/css">
+	<link rel="stylesheet" href="../../components/comments.css" type="text/css">
 	<link rel="stylesheet" href="style.css" type="text/css">
 	<link rel="stylesheet" href="../formato.css" type="text/css">
 	<link rel="stylesheet" href="../../style_homepage.css" type="text/css">
@@ -48,6 +49,8 @@
 		<div class="noticiaDiv">
 			<h1 class="titulos">Procesadores de 4 nanómetros estarían más cerca y llegarían de la mano de MediaTek</h1>
 			<img class="imgPortada" src="../imagenes/mediatek-noticia.jpg">
+
+			<iframe id="frame_likes" scrolling="yes" style="height: 50px; width: 60%;" src="../../components/likesframe.php?idArticulo=11 & username=<?= $usuario; ?>"></iframe>
 
 			<div id="datosPublicación">
 				<div id="autorLabel">
@@ -119,8 +122,9 @@
 				</p>
 			</div>
 		</div>
+		<iframe id="frame_comments" scrolling="yes" src="../../components/commentsbox.php?idArticulo=11 & username=<?= $usuario; ?>"></iframe>	
 	</section>
-
+	
 	<section>
 		<h2>Continúa leyendo nuestros artículos destacados:</h2>
 		<!--Articulos destacados-->

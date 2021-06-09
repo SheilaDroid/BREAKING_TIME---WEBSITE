@@ -21,6 +21,7 @@
 		crossorigin="anonymous"></script>
 	<!--hoja del css-->
 	<link rel="stylesheet" href="../../components/component_css.css" type="text/css">
+	<link rel="stylesheet" href="../../components/comments.css" type="text/css">
 	<link rel="stylesheet" href="style.css" type="text/css">
 	<link rel="stylesheet" href="../formato.css" type="text/css">
 	<link rel="stylesheet" href="../../style_homepage.css" type="text/css">
@@ -47,7 +48,10 @@
 		<div class="noticiaDiv">
 			<h1 class="titulos">Nuevo iMac con M1, precio y fecha de lanzamiento oficial en México</h1>
 			<img class="imgPortada" style="padding-left: 1%; padding-right: 1%;" src="../imagenes/iMac-noticia.jpg">
-
+			
+			<iframe id="frame_likes" scrolling="yes" style="height: 50px; width: 60%; margin-left: 1%;"
+            src="../../components/likesframe.php?idArticulo=12 & username=<?= $usuario; ?>"></iframe>
+	
 			<div id="datosPublicación">
 				<div id="autorLabel">
 					Gerardo Valentín
@@ -108,6 +112,7 @@
 				</p>
 			</div>
 		</div>
+		<iframe id="frame_comments" scrolling="yes" src="../../components/commentsbox.php?idArticulo=12 & username=<?= $usuario; ?>"></iframe>
 	</section>
 
 	<section>
