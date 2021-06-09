@@ -34,7 +34,8 @@
     <head>
         <!--BARRA DE NAVEGACION-->
         <footer id="MENU">
-            <iframe id="frame_menu" scrolling="no" src="../../components/menu2.php" ?usuario=<?= $usuario; ?>"></iframe>
+            <iframe id="frame_menu" scrolling="no"
+                src="../../components/menu2.php?usuario=<?= $usuario; ?>"></iframe>
         </footer>
         <!-- FIN BARRA DE NAVEGACION-->
     </head>
@@ -44,7 +45,13 @@
             <br>
             <h2 class="titulos">Las Mejores App para Tomar Notas en Android</h2>
             <img src="../imagenes/stylelife_img/desk.jpg" class="img-fluid" alt="img-thumbnail">
-            <br>
+            <br><br>
+            <section>
+        <iframe id="frame_likes" scrolling="yes" style="height: 8%; width: 60%;"
+            src="../../components/likesframe.php?idArticulo=1 & username=<?= $usuario; ?>"></iframe>
+            <!--Este style se justifica porque en los .css no agarraba los estilos y no se queria 
+            perder el estilo que se tenia pensado-->
+    </section>
             <hr>
             <p>Si tu eres de esas personas que como yo le encanta tomar notas, hacer listas de tareas, recordatorios...
                 todo desde tu Android y
@@ -152,16 +159,18 @@
 
     </section>
     <section>
-    <!-- por cada nivel de carpetas poner " ../ " -->
-    <iframe id="frame_comments" scrolling="no" src="../../components/commentsbox.php"></iframe>
+        <!-- por cada nivel de carpetas poner " ../ " -->
+        <iframe id="frame_comments" scrolling="yes"
+            src="../../components/commentsbox.php?idArticulo=1 & username=<?= $usuario; ?>"></iframe>
     </section>
 </body>
 
-    <!-- por cada nivel de carpetas poner " ../ " -->
-    <!--<iframe id="frame_info" scrolling="no" src="../../components/info.html"></iframe>-->
-    
-    <footer id="MENU">
+<!-- por cada nivel de carpetas poner " ../ " -->
+<!--<iframe id="frame_info" scrolling="no" src="../../components/info.html"></iframe>-->
+
+<footer id="MENU">
     <!-- por cada nivel de carpetas poner " ../ " -->
     <iframe id="frame_info" scrolling="no" src="../../components/info.html"></iframe>
 </footer>
+
 </html>

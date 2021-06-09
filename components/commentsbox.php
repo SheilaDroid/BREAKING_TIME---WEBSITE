@@ -1,7 +1,37 @@
 <?php
+  include_once("basedatos.php");
+   $con=new BaseDatos();
+    //Esto es para hacer la alta de los comentarios
+    if (array_key_exists("button1", $_REQUEST)) {
+        $id_usuario;
+        if ($_REQUEST['username'] == 'sin_usuario') {
+            //no se podra comentar si no esta registrado
+            echo "<div class='alert alert-danger' role='alert'>
+          Primero debes registrarte para poder comentar.
+        </div>";
+        } else {
+            echo "el usuario es ".$_REQUEST['username'];
+            $id_usuario=$con->getIdUsuario($_REQUEST['username']);
+            if ($con->guardar_comentarios(
+                $id_usuario,
+                $_REQUEST['idArticulo'],
+                $_REQUEST['comentario'],
+            )) {
+                // echo "todo guardado";
+            } else {
+                // echo "no se pudo guardar comentario";
+            }
+        }
+    }
+    if (array_key_exists("button2", $_REQUEST)) {
+        $idborrarcm=$_REQUEST['id_cm'];
+        $con->borrar_comentario($idborrarcm);
+    }
+?>
+<?php
 include_once('basedatos.php');
 $bd = new BaseDatos();
-$GLOBALS['consulta'] = $bd->mostrar_comentarios(1);
+$GLOBALS['consulta'] = $bd->mostrar_comentarios($_REQUEST['idArticulo']);
 //imprimir todos los registros en html, se recibe en una variable
 ?>
 <!DOCTYPE html>
@@ -22,11 +52,11 @@ $GLOBALS['consulta'] = $bd->mostrar_comentarios(1);
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
     integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
   </script>
+  <link rel="stylesheet" href="./components/comments.css" type="text/css">
 </head>
 
-
 <body>
-  <form method="POST" >
+  <form method="POST">
     <div class="container">
       <h3>¿Te gustó este artículo? ¡Dejanos tu comentario!</h3>
       <div class="mb-3">
@@ -36,48 +66,37 @@ $GLOBALS['consulta'] = $bd->mostrar_comentarios(1);
     </div>
   </form>
   <!--AQUI VAN A APARECER LOS COMENTARIOS ANTERIORES-->
-  <tbody>
+  <div class="container frame_comments">
+    <hr>
+    <h3>Comentarios Anteriores</h3>
+    <hr>
     <?php
-                while ($registro=$consulta->fetch_assoc()) {
-                    ?>
-
-    <tr>
-      <td><?php echo $registro['nombre']; ?>
-      </td>
-      <td><?php echo $registro['comentario']; ?>
-      </td>
-
-    </tr>
+    while ($registro=$consulta->fetch_assoc()) {
+        $id_usuario_c=$registro['idUsuario'];
+        $idcm=$registro['id'];
+        $obj=new BaseDatos();
+        if ($_REQUEST['username'] != "sin_usuario") {
+            $id_usuario=$obj->getIdUsuario($_REQUEST['username']);
+        } else {
+            $id_usuario="";
+        } ?>
+    <h5><?php echo $registro['nombre']; ?>
+      :</h5>
+    <p><?php echo $registro['comentario']; ?>
+    </p>
     <?php
-                }?>
-  </tbody>
+        if ($id_usuario==$id_usuario_c) {?>
+    <form method='POST'>
+      <input type="hidden" id="id_cm" name="id_cm" type="number"
+        value="<?php echo $registro['id']?>">
+      <input class='btn btn-primary' type='submit' value='Borrar Comentario' name='button2' id='boton2'>
+    </form>
+    <?php  } ?>
+    <hr>
+    <?php
+    }?>
+  </div>
   <!---->
-  <br>
-  <div class="toast grid-container" style="position: absolute; bottom: 0; right: 100;">
-    <div class="toast-header">
-      Aviso
-    </div>
-    <div class="toast-body">
-      <?php
-                                $frase = "¡Comentario Guardado!";
-                                echo $frase;
-                                ?>
-    </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  <script>
-    $(document).ready(function() {
-      $("#boton2").click(function() {
-        $('.toast').toast({
-          delay: 2000
-        });
-        $('.toast').toast('show');
-      });
-    });
-  </script>
 </body>
 
 </html>

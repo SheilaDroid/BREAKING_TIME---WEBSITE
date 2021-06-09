@@ -46,6 +46,9 @@ color: white;
     min-height: 270px;
     background-color: blue;
 }
+#frame_likes{
+    height: 8%; width: 60%;
+}
 #footer_color{
     background-color:#085C6C;
     padding-top: 1em;
