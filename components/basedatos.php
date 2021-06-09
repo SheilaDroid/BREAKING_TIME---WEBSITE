@@ -12,9 +12,9 @@ class BaseDatos
     public function __construct()
     {
         if ($GLOBALS['conexion'] = new mysqli($this->servidor, $this->usuario, $this->contrasena, $this->nombreDB)) {
-            echo "conexión exitosa";
+            //echo "conexión exitosa";
         } else {
-            echo "error de conexion";
+            //echo "error de conexion";
         }
     }
 
@@ -136,7 +136,6 @@ class BaseDatos
 
     public function getIdUsuario($username)
     {
-        echo "recibo ".$username;
         $sentenciasql = "SELECT id FROM `usuarios` WHERE nombre='$username'";
         $id_user;
         // $sentenciasql = "insert into comentarios (idUsuario,idArticulo,comentario) values ('$id_usuario','$id_articulo,$comentario)";

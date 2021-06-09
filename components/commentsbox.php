@@ -10,7 +10,7 @@
           Primero debes registrarte para poder comentar.
         </div>";
         } else {
-            echo "el usuario es ".$_REQUEST['username'];
+            //echo "el usuario es ".$_REQUEST['username'];
             $id_usuario=$con->getIdUsuario($_REQUEST['username']);
             if ($con->guardar_comentarios(
                 $id_usuario,
