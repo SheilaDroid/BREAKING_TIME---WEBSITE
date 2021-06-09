@@ -17,6 +17,7 @@
 	<!--hoja del css-->
 	<link rel="stylesheet" href="./formato_articulos.css" type="text/css">
   <link rel="stylesheet" href="../../components/component_css.css" type="text/css">
+  <link rel="stylesheet" href="../../components/comments.css" type="text/css">
 </head>
 <body>
   <head>
@@ -33,9 +34,14 @@
         <div>
           <center><h1>Resident Evil Village: todo sobre el nuevo juego de terror de Capcom</h1></center>
         </div>
+        
         <div >
           <img src="./imagenes/articulo1_imagen1.jpg" class="min-img rounded mx-auto d-block">
         </div>
+        <iframe id="frame_likes" scrolling="yes" style="height: 8%; width: 60%;"
+            src="../../components/likesframe.php?idArticulo=7 & username=<?= $usuario; ?>"></iframe>
+            <!--Este style se justifica porque en los .css no agarraba los estilos y no se queria 
+            perder el estilo que se tenia pensado-->
       </div>
       <div>
         <div>
@@ -52,10 +58,13 @@
             <br><h4 class="margen_texto "><p>Capcom ha revelado el cuarto tráiler de Resident Evil Village durante la emisión Resident Evil Showcase de abril y lo cierto es que ha resaltado toda la espectacularidad que caracteriza a las últimas entregas de la serie, por encima de otros aspectos más terroríficos.</p></h4><br>
         </div>
       </div>
+      <iframe id="frame_comments" scrolling="yes"
+            src="../../components/commentsbox.php?idArticulo=7 & username=<?= $usuario; ?>"></iframe>
     </div>
+    
   </div>
+  
   </section>
-
 </body>
 <footer id="MENU"><!-- por cada nivel de carpetas poner " ../ " --> 
   <iframe id="frame_info" scrolling="no"  src="../../components/info.html"></iframe>

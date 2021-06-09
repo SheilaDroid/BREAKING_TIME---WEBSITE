@@ -17,6 +17,7 @@
 	<!--hoja del css-->
 	<link rel="stylesheet" href="./formato_articulos.css" type="text/css">
   <link rel="stylesheet" href="../../components/component_css.css" type="text/css">
+  <link rel="stylesheet" href="../../components/comments.css" type="text/css">
 </head>
 <body>
   <head>
@@ -33,8 +34,13 @@
         <div>
           <center><h1>Ninja Gaiden: Master Collection muestra su accion en un nuevo trailer</h1></center>
         </div>
+        
         <div>
           <img src="./imagenes/articulo2_imagen1.jpg" class="min-img rounded mx-auto d-block">
+          <iframe id="frame_likes" scrolling="yes" style="height: 8%; width: 60%;"
+            src="../../components/likesframe.php?idArticulo=6 & username=<?= $usuario; ?>"></iframe>
+            <!--Este style se justifica porque en los .css no agarraba los estilos y no se queria 
+            perder el estilo que se tenia pensado-->
         </div>
       </div>
       <div>
@@ -52,8 +58,12 @@
           </p></h4><br>
         </div>
       </div>
+      <iframe id="frame_comments" scrolling="yes"
+            src="../../components/commentsbox.php?idArticulo=6 & username=<?= $usuario; ?>"></iframe>
     </div>
+    
   </div>
+  
   </section>
 
 </body>

@@ -20,10 +20,10 @@
 		<!--Barra de Navegación-->
 		<nav class="navbar navbar-expand-lg up ">
 	      <div class="container-fluid d-flex justify-content-evenly navega">
-	        <a class="navbar-brand" href="#">
+	        <a class="navbar-brand" href="../index.php?usuario=<?= $usuario;?>">
 	          <img src="./imagenes/coffee-time.png" width="50" height="50" alt="">
 	        </a>
-	        <a class="navbar-brand letrasNav" target="_parent" id="principal" href="../index.php?usuario=<?= $usuario; ?>">BREAKING TIME</a>
+	        <a class="navbar-brand letrasNav" target="_parent" id="principal" href="../index.php?usuario=<?= $usuario;?>">BREAKING TIME</a>
 	        <!--Elementos de la navbar-->
 	        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	          <ul class="navbar-nav mr-auto">
@@ -31,13 +31,13 @@
 	              <a class="nav-link letrasNav" href="../categoria/videojuegos.php?usuario=<?= $usuario; ?>" target="_parent">Videojuegos</a>
 	            </li>
 	            <li class="nav-item">
-	              <a class="nav-link letrasNav" href="../categoria/hacking.html" target="_parent">Hacking</a>
+	              <a class="nav-link letrasNav" href="../categoria/hacking.php?usuario=<?= $usuario; ?> " target="_parent">Hacking</a>
 	            </li>
 	            <li class="nav-item">
-	              <a class="nav-link letrasNav" href="../categoria/computacion.html" target="_parent">Computación</a>
+	              <a class="nav-link letrasNav" href="../categoria/computacion.php?usuario=<?= $usuario; ?>" target="_parent">Computación</a>
 	            </li>
 	            <li class="nav-item">
-	              <a class="nav-link letrasNav" href="../categoria/stylelife.html" target="_parent">Estilo de Vida</a>
+	              <a class="nav-link letrasNav" href="../categoria/stylelife.php?usuario=<?= $usuario; ?>" target="_parent">Estilo de Vida</a>
 	            </li>
 	          </ul>
 	        </div>

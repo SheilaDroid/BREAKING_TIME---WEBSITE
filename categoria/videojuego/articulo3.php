@@ -17,6 +17,7 @@
 	<!--hoja del css-->
 	<link rel="stylesheet" href="./formato_articulos.css" type="text/css">
   <link rel="stylesheet" href="../../components/component_css.css" type="text/css">
+  <link rel="stylesheet" href="../../components/comments.css" type="text/css">
 </head>
 <body>
   <head>
@@ -33,8 +34,13 @@
       <div>
         <center><h1>El multijugador online de los juegos free-to-play pasa a ser gratuito en todas las consolas de Xbox</h1></center>
       </div>
+     
       <div>
         <img src="./imagenes/articulo3.jpg" class="min-img  rounded mx-auto d-block">
+         <iframe id="frame_likes" scrolling="yes" style="height: 8%; width: 60%;"
+            src="../../components/likesframe.php?idArticulo=8 & username=<?= $usuario; ?>"></iframe>
+            <!--Este style se justifica porque en los .css no agarraba los estilos y no se queria 
+            perder el estilo que se tenia pensado-->
       </div>
       </div>
       <div>
@@ -69,7 +75,10 @@
         </ul></h4><br>
       </div>
     </div>
+    <iframe id="frame_comments" scrolling="yes"
+            src="../../components/commentsbox.php?idArticulo=8 & username=<?= $usuario; ?>"></iframe>
       </div>
+      
   </section>
 
 </body>

@@ -19,7 +19,7 @@ if(!empty($_REQUEST['contraseña'])&&!empty($_REQUEST['c_contraseña'])){
 					exit();
 				}else{
 					?>
-					<center><h1 class="text_alert">usuario existente</h1></center>
+					<center><h1 class="text_alert">Usuario Existente</h1></center>
 					<?php 
 				}
 			}

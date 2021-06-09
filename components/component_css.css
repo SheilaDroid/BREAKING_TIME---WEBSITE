@@ -40,6 +40,15 @@ color: white;
     height: 44%;
     min-height: 270px;
 }
+.frame_comments{
+    width: 100%;
+    height: 44%;
+    min-height: 270px;
+    background-color: blue;
+}
+#frame_likes{
+    height: 8%; width: 60%;
+}
 #footer_color{
     background-color:#085C6C;
     padding-top: 1em;
