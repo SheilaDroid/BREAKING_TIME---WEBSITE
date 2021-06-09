@@ -1,37 +1,22 @@
 <?php
 class BaseDatos
 {
-
     public $conexion; //guardar el id de la conexion
     public $servidor = "127.0.0.1"; //dominio o ip
     public $usuario = "root";
     public $contrasena = "";
     public $nombreDB = "breakingtime";
 
-//generar la conexion a la base datos a través del constructor
+    //generar la conexion a la base datos a través del constructor
 
     public function __construct()
     {
-
         if ($GLOBALS['conexion'] = new mysqli($this->servidor, $this->usuario, $this->contrasena, $this->nombreDB)) {
         } else {
         }
-
     }
 
     //---------------------------------------------- seccion calificar articulos -------------------------------------------------------
-    //calificar articulos 
-    public function calificar_articulos($titulo,$likes,$direccion){
-        $sentenciasql = "insert into articulos (titulo,likes,direccion) values ('$titulo','$likes,'$direccion')";   
-        try {
-            $GLOBALS['conexion']->query($sentenciasql); //método que genera accion
-    
-            //echo "datos guardados correctamente";
-        } catch (mysqli_sql_exception $ex) {
-            echo $ex;
-        }
-
-    }
 
     //si el articulo ya cuenta con likes se modifica el campo likes
     //modificacion
@@ -40,15 +25,16 @@ class BaseDatos
         $sentenciasql = "update articulos set likes ='" .$no_likes. "'where id='$Id'";
 
         if ($GLOBALS['conexion']->query($sentenciasql)) {
-            echo "éxito al actualiza likes";
+            //echo "éxito al actualiza likes";
         } else {
-            echo "error al actualizar likes";
+            //echo "error al actualizar likes";
         }
-
     }
 
+
     //mostrar numero de likes por articulo
-    public function consulta_nolikes($Id){
+    public function consulta_nolikes($Id, $opc)
+    {
         $cantidad_likes;
         if ($consulta = $GLOBALS['conexion']->query("select likes from articulos where id= '$Id'")) {
             //echo "éxito consulta";
@@ -58,20 +44,28 @@ class BaseDatos
         while ($row = $consulta->fetch_assoc()) {
             $cantidad_likes=$row['likes'];
         }
-        echo "A ".$cantidad_likes." personas les gusta esto."; //retorna el numero de likes
+        if ($opc==1) {
+            //nos regresa todo un mensaje con los likes
+            echo "A ".$cantidad_likes." personas les gusta esto."; //retorna el numero de likes
+        } else {
+            //nos retorna solo los likes
+            return $cantidad_likes;
+        }
     }
 
     //---------------------------------------------- seccion tabla usuarios -------------------------------------------------------
     // consultar usuario
-    public function consulta($usuario){
-        if($consulta=$GLOBALS['conexion']->query("select * from usuarios where nombre='$usuario'")){
-        }else{
+    public function consulta($usuario)
+    {
+        if ($consulta=$GLOBALS['conexion']->query("select * from usuarios where nombre='$usuario'")) {
+        } else {
         }
         return $consulta;
     }
     //guardar usuario
-    public function gurdar_usuario($nombre,$correo,$password,$sexo,$tipo){
-        $sentenciasql = "insert into usuarios (nombre,correo,password,sexo,tipo) values ('$nombre','$correo','$password','$sexo','$tipo')";   
+    public function gurdar_usuario($nombre, $correo, $password, $sexo, $tipo)
+    {
+        $sentenciasql = "insert into usuarios (nombre,correo,password,sexo,tipo) values ('$nombre','$correo','$password','$sexo','$tipo')";
         try {
             $GLOBALS['conexion']->query($sentenciasql); //método que genera accion
     
@@ -79,10 +73,10 @@ class BaseDatos
         } catch (mysqli_sql_exception $ex) {
             echo $ex;
         }
-
     }
     //borrar usuario por nombre
-    public function borrar_usuario($nombre){
+    public function borrar_usuario($nombre)
+    {
         if ($GLOBALS['conexion']->query("delete from usuarios where  nombre='$nombre'")) {
             echo "usuario borrado con exito";
         } else {
@@ -90,8 +84,9 @@ class BaseDatos
         }
     }
 
-     //borrar usuario por id
-    public function borrar_artFavoritoId($id_usuario){
+    //borrar usuario por id
+    public function borrar_artFavoritoId($id_usuario)
+    {
         if ($GLOBALS['conexion']->query("delete from usuarios where  id='$id_usuario'")) {
             echo "usuario borrado con exito";
         } else {
@@ -117,8 +112,9 @@ class BaseDatos
 
    
     //guardar comentarios
-    public function guardar_comentarios($id_usuario,$id_articulo,$comentario){
-        $sentenciasql = "insert into comentarios (idUsuario,idArticulo,comentario) values ('$id_usuario','$id_articulo','$comentario')";   
+    public function guardar_comentarios($id_usuario, $id_articulo, $comentario)
+    {
+        $sentenciasql = "insert into comentarios (idUsuario,idArticulo,comentario) values ('$id_usuario','$id_articulo','$comentario')";
         try {
             $GLOBALS['conexion']->query($sentenciasql); //método que genera accion
         } catch (mysqli_sql_exception $ex) {
@@ -126,8 +122,9 @@ class BaseDatos
         }
     }
 
-    //borrar comrntario por id 
-    public function borrar_comentario($id_comentario){
+    //borrar comrntario por id
+    public function borrar_comentario($id_comentario)
+    {
         if ($GLOBALS['conexion']->query("delete from comentarios where  id='$id_comentario'")) {
             //echo "comentario borrado con exito";
         } else {
@@ -135,13 +132,14 @@ class BaseDatos
         }
     }
 
-    public function getIdUsuario($username){
+    public function getIdUsuario($username)
+    {
+        echo "recibo ".$username;
         $sentenciasql = "SELECT id FROM `usuarios` WHERE nombre='$username'";
         $id_user;
-       // $sentenciasql = "insert into comentarios (idUsuario,idArticulo,comentario) values ('$id_usuario','$id_articulo,$comentario)";   
+        // $sentenciasql = "insert into comentarios (idUsuario,idArticulo,comentario) values ('$id_usuario','$id_articulo,$comentario)";
         try {
             $datos=$GLOBALS['conexion']->query($sentenciasql); //método que genera accion
-    
             //echo "datos guardados correctamente";
         } catch (mysqli_sql_exception $ex) {
             echo $ex;
@@ -153,8 +151,9 @@ class BaseDatos
     }
 
     //---------------------------------------------- seccion articulos favoritos -------------------------------------------------------
-     //mostrar articulos favoritos por usuario
-    public function consulta_artFavoritos($id_usuario){
+    //mostrar articulos favoritos por usuario
+    public function consulta_artFavoritos($id_usuario)
+    {
         if ($consulta = $GLOBALS['conexion']->query("select * from artFavoritos where idUsuario= '$id_usuario'")) {
             echo "éxito consulta";
         } else {
@@ -164,7 +163,8 @@ class BaseDatos
     }
 
     //mostrar articulos favoritos por usuario
-    public function consulta_favoritos($id_usuario){
+    public function consulta_favoritos($id_usuario)
+    {
         if ($consulta = $GLOBALS['conexion']->query("select idArticulo from artFavoritos where idUsuario= '$id_usuario'")) {
             echo "éxito consulta";
         } else {
@@ -173,9 +173,10 @@ class BaseDatos
         return $idArticulo; //retorna los id's de los articulos favoritos por usuario
     }
     
-    //guardar articulos favoritos 
-    public function agregar_articulo($id_usuario,$id_articulo){
-        $sentenciasql = "insert into artfavoritos (idUsuario,idArticulo) values ('$id_usuario','$id_articulo')";   
+    //guardar articulos favoritos
+    public function agregar_articulo($id_usuario, $id_articulo)
+    {
+        $sentenciasql = "insert into artfavoritos (idUsuario,idArticulo) values ('$id_usuario','$id_articulo')";
         try {
             $GLOBALS['conexion']->query($sentenciasql); //método que genera accion
     
@@ -183,19 +184,14 @@ class BaseDatos
         } catch (mysqli_sql_exception $ex) {
             echo $ex;
         }
-    
     }
     //borrra articulo de favoritos
-    public function borrar_artFavorito($id_usuario,$id_articulo){
-
+    public function borrar_artFavorito($id_usuario, $id_articulo)
+    {
         if ($GLOBALS['conexion']->query("delete from artFavoritos where  idUsuario='$id_usuario' and idArticulo= '$id_articulo'")) {
             echo "articulo favorito borrado con exito";
         } else {
             echo "error al borrar articulo favorito";
         }
     }
-
-   
-
 }
-?>

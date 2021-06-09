@@ -7,3 +7,7 @@
 #likes-css{
     display:inline; margin-right:3em;
 }
+
+#frame_likes{
+    height: 8%; width: 60%;
+}

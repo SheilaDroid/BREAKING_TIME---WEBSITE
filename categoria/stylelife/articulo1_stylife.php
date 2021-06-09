@@ -47,8 +47,10 @@
             <img src="../imagenes/stylelife_img/desk.jpg" class="img-fluid" alt="img-thumbnail">
             <br><br>
             <section>
-        <iframe id="frame_likes" scrolling="yes" style="height: 5%; width: 60%;"
+        <iframe id="frame_likes" scrolling="yes" style="height: 8%; width: 60%;"
             src="../../components/likesframe.php?idArticulo=1 & username=<?= $usuario; ?>"></iframe>
+            <!--Este style se justifica porque en los .css no agarraba los estilos y no se queria 
+            perder el estilo que se tenia pensado-->
     </section>
             <hr>
             <p>Si tu eres de esas personas que como yo le encanta tomar notas, hacer listas de tareas, recordatorios...

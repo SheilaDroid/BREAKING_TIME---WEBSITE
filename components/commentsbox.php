@@ -4,13 +4,14 @@
     //Esto es para hacer la alta de los comentarios
     if (array_key_exists("button1", $_REQUEST)) {
         $id_usuario;
-        $id_usuario=$con->getIdUsuario($_REQUEST['username']);
-        if ($_REQUEST['username'] == "sin_usuario") {
+        if ($_REQUEST['username'] == 'sin_usuario') {
             //no se podra comentar si no esta registrado
             echo "<div class='alert alert-danger' role='alert'>
           Primero debes registrarte para poder comentar.
         </div>";
         } else {
+            echo "el usuario es ".$_REQUEST['username'];
+            $id_usuario=$con->getIdUsuario($_REQUEST['username']);
             if ($con->guardar_comentarios(
                 $id_usuario,
                 $_REQUEST['idArticulo'],
@@ -75,11 +76,10 @@ $GLOBALS['consulta'] = $bd->mostrar_comentarios($_REQUEST['idArticulo']);
         $idcm=$registro['id'];
         $obj=new BaseDatos();
         if ($_REQUEST['username'] != "sin_usuario") {
-          $id_usuario=$obj->getIdUsuario($_REQUEST['username']); 
-        }else{
-          $id_usuario="";
-        }?>
-       
+            $id_usuario=$obj->getIdUsuario($_REQUEST['username']);
+        } else {
+            $id_usuario="";
+        } ?>
     <h5><?php echo $registro['nombre']; ?>
       :</h5>
     <p><?php echo $registro['comentario']; ?>

@@ -46,6 +46,8 @@
             <h2 class="titulos">Canales Recomendados de Youtube sobre Finanzas Personales y Productividad</h2>
             <img src="../imagenes/stylelife_img/youtube-1684601_1280.png" class="img-fluid" alt="img-thumbnail">
             <br>
+            <iframe id="frame_likes" scrolling="yes" style="height: 8%; width: 60%;"
+            src="../../components/likesframe.php?idArticulo=3 & username=<?= $usuario; ?>"></iframe>
             <hr>
             <p>Si estas interesado en mejorar tu Productividad, conocer herramientas y consejos para lograrlo, y además
                 saber como

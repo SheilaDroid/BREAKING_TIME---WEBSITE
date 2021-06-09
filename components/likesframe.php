@@ -3,11 +3,12 @@
    $con=new BaseDatos();
     //Esto es para hacer la alta de los comentarios
     if (array_key_exists("button1", $_REQUEST)) {
-        
-    }
-    if (array_key_exists("button2", $_REQUEST)) {
-        $idborrarcm=$_REQUEST['id_cm'];
-        $con->borrar_comentario($idborrarcm);
+        $likes_anteriores = $con->consulta_nolikes($_REQUEST['idArticulo'], 0);
+        $likes_actualizados=$likes_anteriores+1;
+        $con->mod_Nolikes($likes_actualizados, $_REQUEST['idArticulo']);
+        $btnlikes="false";
+    } else {
+        $btnlikes="true";
     }
 ?>
 <!DOCTYPE html>
@@ -29,6 +30,7 @@
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="./components/comments.css" type="text/css">
+    <link rel="stylesheet" href="./components/component_css.css" type="text/css">
 </head>
 
 <body>
@@ -38,11 +40,16 @@
             //carga el numero de likes
             include_once('basedatos.php');
             $bd = new BaseDatos();
-            $bd->consulta_nolikes($_REQUEST['idArticulo']);
             ?>
+            <?php if ($btnlikes=="true") {
+                $bd->consulta_nolikes($_REQUEST['idArticulo'], 1); ?>
             <input class="btn btn-primary" type="submit" value="Me gusta este artículo" name="button1" id="likes-css">
+            <?php
+            } else {
+                echo "A ti y ". $likes_anteriores." personas les gusta esto"; ?>
+            <?php
+            }?>
         </div>
     </form>
 </body>
-
 </html>
