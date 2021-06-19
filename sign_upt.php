@@ -66,7 +66,7 @@ if(!empty($_REQUEST['contraseña'])&&!empty($_REQUEST['c_contraseña'])){
 			<br>
 		</div>
 		<div>
-		<h6 class="position-sign_up"><a class="letras-login2" href="login.php">Iniciar Sesion</a> | <a href="" class="letras-login2">Olvide mi contraseña</a></h6>
+		<h6 class="position-sign_up"><a class="letras-login2" href="login.php">Iniciar Sesion</a> <!--| <a href="" class="letras-login2">Olvide mi contraseña</a>--></h6>
 	</div>
 	</section>
 </body>
