@@ -64,6 +64,7 @@ class BaseDatos
         }
         return $consulta;
     }
+
     //guardar usuario
     public function gurdar_usuario($nombre, $correo, $password, $sexo, $tipo)
     {
@@ -176,7 +177,20 @@ class BaseDatos
         }
         return $consulta; //retorna los id's de los articulos favoritos por usuario
     }
+	
+	public function consulta_todoDeArticulos($id_articulo){
+        if ($consulta = $GLOBALS['conexion']->query("select * FROM articulos WHERE id='$id_articulo'")) {
+        } else {
+        }
+        return $consulta; //retorna los todo de los articulos
+    }
 
+	public function consulta_nombreArticulo($titulo_articulo){
+		if ($consulta = $GLOBALS['conexion']->query("SELECT * FROM articulos WHERE titulo='$titulo_articulo'")) {
+        } else {
+        }
+        return $consulta; //retorna los nombres de los articulos
+	}
     
     //guardar articulos favoritos
     public function agregar_articulo($id_usuario, $id_articulo)
@@ -190,6 +204,7 @@ class BaseDatos
             echo $ex;
         }
     }
+
     //borrra articulo de favoritos
     public function borrar_artFavorito($id_usuario, $id_articulo)
     {

@@ -50,7 +50,7 @@
 			<h1 class="titulos">Procesadores de 4 nanómetros estarían más cerca y llegarían de la mano de MediaTek</h1>
 			<img class="imgPortada" src="../imagenes/mediatek-noticia.jpg">
 
-			<iframe id="frame_likes" scrolling="yes" style="height: 50px; width: 60%;" src="../../components/likesframe.php?idArticulo=11 & username=<?= $usuario; ?>"></iframe>
+			<iframe id="frame_likes" scrolling="yes" style="height: 50px; width: 60%;" src="../../components/likesframe.php?idArticulo=11&username=<?= $usuario; ?>"></iframe>
 
 			<div id="datosPublicación">
 				<div id="autorLabel">
