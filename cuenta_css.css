@@ -3,6 +3,7 @@
     height: 20px;
     min-height: 60px;
 }
+
 #frame_info2{
     width: 100%;
     height: 44%;
@@ -14,3 +15,17 @@
 .quitar_hiper{
 	text-decoration: none;
 }
+
+input[type=submit]{
+	background-color: #61dfd655;
+	border-color: red;
+	border-width: 3px;
+	border-style: groove;
+	color: red;
+	font-weight: 600;
+}
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }

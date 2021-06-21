@@ -11,7 +11,8 @@
     } else {
         $btnlikes="true";
     }
-	if(!empty($_GET['username'])){
+	
+	if(!empty($_GET['username']) && $_GET['username'] != "sin_usuario"){
 		$usuario=$_GET['username'];
 		$idUsuario = $con->getIdUsuario($usuario);
 		$articulosFavoritos = $con->consulta_artFavoritos($idUsuario);
@@ -34,7 +35,7 @@
 		}
 	}else{
 		$usuario="sin_usuario";
-		$btnFavorito="Inicie sesion para guardar en favoritos";
+		$btnFavorito="Agregar a Favoritos";
 	}
 ?>
 <!DOCTYPE html>
@@ -55,8 +56,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="./components/comments.css" type="text/css">
-    <link rel="stylesheet" href="./components/component_css.css" type="text/css">
+    <link rel="stylesheet" href="./comments.css" type="text/css">
+    <link rel="stylesheet" href="./component_css.css" type="text/css">
 </head>
 
 <body>
@@ -87,11 +88,11 @@
 					<input class="btn btn-warning" type="submit" value="Añadir a favoritos" name="favoritoName">
 				<?php
 				}else{
-					echo $btnFavorito;
+					echo "<input type=\"button\" disabled class=\"btn btn-secondary\" value=\"$btnFavorito\">";
 				}
 				?>
 			</form>
-		<div>
+		</div>
 	</div>
 </body>
 </html>
