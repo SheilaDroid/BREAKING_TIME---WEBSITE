@@ -1,0 +1,13 @@
+#frame_comments{
+    width: 60%;
+    height: 30%;
+    min-height: 270px;
+    margin-left: 12em;
+}
+#likes-css{
+    display:inline; margin-right:3em;
+}
+
+#frame_likes{
+    height: 8%; width: 60%;
+}

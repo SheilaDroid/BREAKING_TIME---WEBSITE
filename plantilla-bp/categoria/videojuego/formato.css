@@ -1,0 +1,89 @@
+.dimensiones_imagen{
+	width: 95%;
+	height: 500px;
+}
+.texto_destacados{
+	color: white;
+    width: 10%;
+	position: relative;
+	left: 3%;
+}
+.dimensiones_imagen1_destacado{
+	width: 500px;
+	height: 500px;
+}
+.dimensiones_imagen2_destacado{
+	width: 600px;
+	height: 220px;
+}
+.dimensiones_imagen3_destacado{
+	width: 600px;
+	height: 220px;
+}
+.fondo1{
+	background-color: rgb(1, 45, 68  );
+	width: 100%
+}
+.fondo2{
+	background-color: white;
+}
+.pre-card{
+	width: 18rem;
+}
+.marco{
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    transition: 0.1s;
+}
+
+.marco:hover {
+    box-shadow: 0 0 10px 10px rgba(0, 140, 186, 0.9);
+    /*si quieren cambiar el color del marco aqui*/
+}
+.quitar_efecto_link{
+	text-decoration: none;
+	color: gray;
+}
+.quitar_efecto_link:hover{
+	color: red;
+}
+#footer_color{
+    background-color:#085C6C;
+    padding-top: 1em;
+    margin-top: 0.5cm;
+    padding-bottom: 1em;
+}
+
+#footer_title{
+    color: white;
+    font-family: Century Ghotic;
+    text-align: center;
+}
+#titulos_footer{
+    color: white;
+}
+.img_footer{
+    width: 30px;
+    height: 30px;
+}
+.footer_lista{
+    font-weight: normal;
+    font-size: 14px;
+    font-family: Century Ghotic;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+}
+.footer_lista:hover{
+    color:#808B96 ;
+    text-decoration: none;
+}
+.derechos{
+    background-color: #117864 ;
+    color: white;
+    text-align: center;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}

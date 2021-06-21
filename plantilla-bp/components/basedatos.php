@@ -19,17 +19,6 @@ class BaseDatos
     }
 
     //---------------------------------------------- seccion calificar articulos -------------------------------------------------------
-    public function reporteArticulos()
-    {
-         if ($consulta = $GLOBALS['conexion']->query("select * from articulos")) {
-             //echo "éxito consulta";
-
-
-        } else {
-            echo "Error consulta";
-        }
-         return $consulta; //retorna consulta para imprimir en html
-    }
 
     //si el articulo ya cuenta con likes se modifica el campo likes
     //modificacion
@@ -67,21 +56,7 @@ class BaseDatos
     }
 
      //---------------------------------------------- seccion tabla usuarios -------------------------------------------------------
-    
-    
-     // consultar usuario
-    public function reporteUsuarios()
-    {
-         if ($consulta = $GLOBALS['conexion']->query("select * from usuarios")) {
-             //echo "éxito consulta";
-
-
-        } else {
-            echo "Error consulta";
-        }
-         return $consulta; //retorna consulta para imprimir en html
-    }
-
+    // consultar usuario
     public function consulta($usuario)
     {
         if ($consulta=$GLOBALS['conexion']->query("select * from usuarios where nombre='$usuario'")) {
@@ -137,7 +112,7 @@ class BaseDatos
         return $consulta; //retorna consulta para imprimir en html
     }
 
-
+   
     //guardar comentarios
     public function guardar_comentarios($id_usuario, $id_articulo, $comentario)
     {
@@ -177,18 +152,6 @@ class BaseDatos
     }
 
     //---------------------------------------------- seccion articulos favoritos -------------------------------------------------------
-    public function reporteFavoritos()
-    {
-         if ($consulta = $GLOBALS['conexion']->query("select * from artfavoritos")) {
-             //echo "éxito consulta";
-
-
-        } else {
-            echo "Error consulta";
-        }
-         return $consulta; //retorna consulta para imprimir en html
-    }
-    
     //mostrar articulos favoritos por usuario
     public function consulta_artFavoritos($id_usuario)
     {
@@ -236,6 +199,4 @@ class BaseDatos
             echo "error al borrar articulo favorito";
         }
     }
-
-  
 }

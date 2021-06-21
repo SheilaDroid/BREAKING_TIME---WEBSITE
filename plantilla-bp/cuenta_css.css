@@ -1,0 +1,16 @@
+#frame_menu2{
+    width: 100%;
+    height: 20px;
+    min-height: 60px;
+}
+#frame_info2{
+    width: 100%;
+    height: 44%;
+    min-height: 270px;
+}
+.tamano{
+	min-height: 400px;
+}
+.quitar_hiper{
+	text-decoration: none;
+}
