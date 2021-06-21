@@ -1,0 +1,274 @@
+.navega{
+    background-color:#085C6C;
+color: white;
+}
+#principal{
+    font-size: 20px;
+}
+.letrasNav{
+    color:white;
+    font-family:Century Ghotic;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.letrasNav:hover{
+    color:#808B96 ;
+}
+.buscador{
+    margin-bottom: -5px;
+}
+
+.contenedor1{
+   
+    background-color: #30545c ;
+}
+
+#recientes{
+    text-align: center;
+    color: gray;
+    font-family: Century Ghotic;
+}
+
+#titulo_articulo{
+    color: gray;
+    font-family: Century Ghotic;
+    font-size: 2vm;
+    font-weight: bold;
+}
+.espacio-1{
+    padding-bottom: 0.7cm;
+    margin-top: 0.7cm;
+}
+
+.title_semana{
+    font-size: 40px;
+    color: #34495E;
+    font-family: Century Ghotic;
+    text-align: center;
+}
+#img_semana{
+    margin-left: 7em; 
+    padding-right: 0%;
+}
+#con_semana{
+    margin-top:1cm; background-color: #69A79B ;
+}
+#p_semana{
+    font-size: 20px;
+    color: white;
+    font-family: Century Ghotic;
+}
+#btn_semana{
+    background-color: #34495E ;
+    border-color: honeydew;
+}
+#btn_semana:hover{
+    background-color: white;
+    border-color:#34495E ;
+    color: #34495E;
+    text-align: center;
+}
+#footer_color{
+    background-color:#085C6C;
+    padding-top: 1em;
+    margin-top: 0.5cm;
+    padding-bottom: 1em;
+}
+
+#footer_title{
+    color: white;
+    font-family: Century Ghotic;
+    text-align: center;
+}
+#titulos_footer{
+    color: white;
+}
+.img_footer{
+    width: 30px;
+    height: 30px;
+}
+.footer_lista{
+    font-weight: normal;
+    font-size: 14px;
+    font-family: Century Ghotic;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+}
+.footer_lista:hover{
+    color:#808B96 ;
+    text-decoration: none;
+}
+.derechos{
+    background-color: #117864 ;
+    color: white;
+    text-align: center;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
+.margen-arriba{
+    margin-top: 1cm;
+}
+.bloque-redes{
+    display:inline-block;
+}
+
+    /*CSS del hover de los articulos destacados*/
+.caption-style-1 {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    }
+    .caption-style-1 li {
+    float: left;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+    }
+    .caption-style-1 li:hover .caption {
+    opacity: 1;
+    }
+    .caption-style-1 img {
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    z-index: 4;
+    }
+    .caption-style-1 .caption {
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: all 0.45s ease-in-out;
+    -moz-transition: all 0.45s ease-in-out;
+    -o-transition: all 0.45s ease-in-out;
+    -ms-transition: all 0.45s ease-in-out;
+    transition: all 0.45s ease-in-out;
+    }
+    .caption-style-1 .blur {
+    background-color: rgba(0,0,0,0.65);
+    min-height: 200px;
+    min-width: 400px;
+    width: 600px;
+    height: 300px;
+    z-index: 5;
+    position: absolute;
+    }
+    .caption-style-1 .caption-text h1 {
+    text-transform: uppercase;
+    font-size: 2vw;
+    }
+    .caption-style-1 .caption-text {
+    z-index: 10;
+    color: #fff;
+    position: absolute;
+    min-width: 300px;
+    min-height: 200px;
+    width: 600px;
+    height: 300px;
+    text-align: justify;
+    vertical-align: middle;
+    margin-left: 3em;
+    top: 100px;
+    }
+/*CSS PARA EL LOGIN Y EL SIGN UP*/
+.bg-black{
+    background-color: black;
+}
+.form-login{
+    background-color: #13F3E5;
+    width: 310px;
+    height: 300px;
+    position: absolute;
+    left: 38.4%;
+    top: 30%;
+}
+.quitar_viñeta{
+    list-style: none;
+}
+.style-input{
+    height: 45px;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid black;
+}
+.style-button{
+    height: 45px;
+    width: 85%;
+    background-color: black;
+    color: white;
+    border:none;
+}
+#title{
+    position: absolute;
+    top: 21%;
+    left: 38.7%;
+    width: 20%;
+    font-size: 30px;
+    color:white;
+    font-family:Century Ghotic;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.position-login{
+    position: absolute;
+    top: 78%;
+    left: 39%;
+    width: 20%;
+}
+.letras-login2{
+    text-decoration: none;
+    color: #8A8889;
+    font-size: 12px;
+}
+.letras-login2:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+/*---EL SIGN UP*/
+.text_alert{
+    white-space: nowrap;
+    color: black;
+    background-color: #E00000 ;
+    width: 520px;
+    border: 1px solid #FF0000;
+    text-overflow: clip;
+}
+.form-sign_up{
+    background-color: #13F3E5;
+    width: 310px;
+    height: 400px;
+    position: absolute;
+    left: 38.4%;
+    top: 25%;
+}
+.letras-sign_up{
+    text-decoration: none;
+    color: #8A8889;
+    font-size: 12px;
+}
+.letras-sign_up:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.position-sign_up{
+    position: absolute;
+    top: 89%;
+    left: 39%;
+    width: 20%;
+}
+#title2{
+    position: absolute;
+    top: 15%;
+    left: 38.7%;
+    width: 20%;
+    font-size: 30px;
+    color:white;
+    font-family:Century Ghotic;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.style-select{
+    width: 85.5%;
+}

@@ -1,0 +1,111 @@
+.navega{
+    background-color:#085C6C;
+color: white;
+}
+#principal{
+    font-size: 20px;
+}
+.letrasNav{
+    color:white;
+    font-family:Century Ghotic;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.letrasNav:hover{
+    color:#808B96 ;
+}
+.buscador{
+    margin-bottom: -5px;
+}
+.mover_buscador{/*para reparar el navbar*/
+	position: relative;
+	right: 90px;
+	top: 20px;
+}
+.mover_boton_buscador{/*para reparar el navbar*/
+	position: relative;
+	top: -18px;
+	left: 120px;
+}/*-------------------------------------*/
+.fondo{
+	background-color: gray;
+	height: 2182px;
+}
+.fondo_articulo2{
+	background-color: gray;
+	display: flex;
+}
+.hoja{
+	background-color: white;
+	width: 90%;
+	height: 100%;
+}
+.min-img{
+	width: 80%;
+	height: 35%;
+}
+.imagen_principal{
+	position: absolute;
+	top: 140px;
+
+}
+.tamaño-video{
+	width: 60%;
+	height: 404px;
+}
+.separador{
+	width: 90%;
+}
+.autor{
+	position: relative;
+	right: 10%;
+}
+.margen_texto{
+	position: relative;
+	left: 5%;
+	width: 90%;
+}
+.margen_texto_articulo1{
+	width: 100px;
+	display: flex;
+}
+
+#footer_color{
+    background-color:#085C6C;
+    padding-top: 1em;
+    margin-top: 0.5cm;
+    padding-bottom: 1em;
+}
+
+#footer_title{
+    color: white;
+    font-family: Century Ghotic;
+    text-align: center;
+}
+#titulos_footer{
+    color: white;
+}
+.img_footer{
+    width: 30px;
+    height: 30px;
+}
+.footer_lista{
+    font-weight: normal;
+    font-size: 14px;
+    font-family: Century Ghotic;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+}
+.footer_lista:hover{
+    color:#808B96 ;
+    text-decoration: none;
+}
+.derechos{
+    background-color: #117864 ;
+    color: white;
+    text-align: center;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}

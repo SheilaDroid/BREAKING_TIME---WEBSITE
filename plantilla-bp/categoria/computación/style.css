@@ -1,0 +1,20 @@
+.noticiaDiv{
+	margin: 0% 10% 10% 10%;
+	background-color: rgb(220, 220, 220);
+}
+
+.imgPortada{
+	object-fit: contain;
+	width: 100%;
+}
+
+#datosPublicación{
+	font-size: smaller;
+	margin-bottom: 2%;
+	font-weight: 100;
+}
+
+.titulos{
+	padding: 3%;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
