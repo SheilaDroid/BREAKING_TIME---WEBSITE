@@ -55,8 +55,9 @@ if(!empty($_GET['usuario'])){
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>ID USUARIO</th>
-								<th>ID ARTICULO</th>
+								<th>ARTICULO FAVORITOS</th>
+								<th>CORREO</th>
+								<th>NOMBRE</th>
 							</tr>
 						</thead>
 						
@@ -67,10 +68,13 @@ if(!empty($_GET['usuario'])){
 								<?php echo $registro['id']; ?>
 								</td>
 								<td>
-									<?php echo $registro['idUsuario']; ?>
+									<?php echo $registro['titulo']; ?>
 								</td>
 								<td>
-									<?php echo $registro['idArticulo']; ?>
+									<?php echo $registro['correo']; ?>
+								</td>
+								<td>
+									<?php echo $registro['nombre']; ?>
 								</td>
 							</tr>
 							<?php }?>
