@@ -77,5 +77,4 @@ if (!empty($_GET['usuario'])) {
         </nav>
     </footer>
 </body>
-
 </html>
