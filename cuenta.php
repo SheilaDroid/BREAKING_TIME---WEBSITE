@@ -98,7 +98,7 @@ while ($registro = $consulta->fetch_assoc()) {
                                     </p>
                                     <p>
                                         Direccion: <a href="<?=utf8_encode($registro2['direccion']);?>"
-                                            class="quitar_hiper">http:127.0.0.1/<?=utf8_encode($registro2['direccion']);?></a>
+                                            class="quitar_hiper">http://127.0.0.1/<?=utf8_encode($registro2['direccion']);?></a>
                                     </p>
                                     <br>
                                 </div>

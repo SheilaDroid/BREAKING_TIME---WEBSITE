@@ -37,6 +37,7 @@ if(!empty($_GET['usuario'])){
 			$cambioColor = "1";
 		}
 	}
+
 	$tabla .= "</tbody>";
 	if(array_key_exists("guardarPdfBtn",$_REQUEST)){
 		$html ="
@@ -138,6 +139,5 @@ if(!empty($_GET['usuario'])){
 		<!-- por cada nivel de carpetas poner " ../ " -->
 		<iframe id="frame_info" scrolling="no" src="../components/info.html"></iframe>
 	</footer>
-
 </body>
 </html>
