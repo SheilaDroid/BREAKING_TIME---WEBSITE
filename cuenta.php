@@ -2,8 +2,15 @@
 include_once './components/basedatos.php';
 $BD = new BaseDatos();
 
-if (!empty($_GET['usuario'])) {
-    $usuario = $_GET['usuario'];
+if (!empty($_GET['usuario'])||!empty($_GET['m_nombre'])) {
+    if(!empty($_GET['m_nombre'])){
+        $BD->modificar_usuario($_GET['m_id'],$_GET['m_nombre'],$_GET['m_contra'],$_GET['m_correo']);
+        $usuario = $_GET['m_nombre'];
+    }else{
+        $usuario = $_GET['usuario'];
+    }
+
+    
     $id_user;
     $tipo_user;
 
@@ -14,6 +21,9 @@ if (!empty($_GET['usuario'])) {
         if ($registro['nombre'] == $usuario) {
             $id_user = $registro['id'];
             $tipo_user = $registro['tipo'];
+            $d_nombre=$registro['nombre'];
+            $d_contraseña=$registro['password'];
+            $d_correo=$registro['correo'];
         }
     }
 } else {
@@ -131,6 +141,13 @@ while ($registro = $consulta->fetch_assoc()) {
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body tamano">
                             <!--CODIGO DE MODIFICACION-->
+                            <form action="#" method="GET">
+                                <h3>Nombre:</h3><input type="text" id="m_nombre" name="m_nombre" value=<?= $d_nombre?>><br>
+                                <h3>Contraseña:</h3><input type="text" id="m_contra" name="m_contra" value=<?= $d_contraseña?>><br>
+                                <h3>Correo:</h3><input type="text" id="m_correo" name="m_correo" value=<?= $d_correo?>><br>
+                                <input type="hidden" id="m_id" name="m_id" value=<?= $id_user?>>
+                                <input type="submit" name="">
+                            </form>
                         </div>
                     </div>
                 </div>

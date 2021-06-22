@@ -111,6 +111,11 @@ class BaseDatos
             echo "error al borrar usuario";
         }
     }
+    public function modificar_usuario($id,$nombre,$contra,$correo){
+        if ($GLOBALS['conexion']->query("update usuarios set nombre='$nombre',correo='$correo',password='$contra' where id='$id'")) {
+        } else {
+        }
+    }
 
     //borrar usuario por id
     public function borrar_artFavoritoId($id_usuario)
