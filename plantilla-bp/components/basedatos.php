@@ -19,17 +19,6 @@ class BaseDatos
     }
 
     //---------------------------------------------- seccion calificar articulos -------------------------------------------------------
-    public function reporteArticulos()
-    {
-         if ($consulta = $GLOBALS['conexion']->query("select * from articulos")) {
-             //echo "éxito consulta";
-
-
-        } else {
-            echo "Error consulta";
-        }
-         return $consulta; //retorna consulta para imprimir en html
-    }
 
     //si el articulo ya cuenta con likes se modifica el campo likes
     //modificacion
@@ -67,21 +56,7 @@ class BaseDatos
     }
 
      //---------------------------------------------- seccion tabla usuarios -------------------------------------------------------
-    
-    
-     // consultar usuario
-    public function reporteUsuarios()
-    {
-         if ($consulta = $GLOBALS['conexion']->query("select * from usuarios")) {
-             //echo "éxito consulta";
-
-
-        } else {
-            echo "Error consulta";
-        }
-         return $consulta; //retorna consulta para imprimir en html
-    }
-
+    // consultar usuario
     public function consulta($usuario)
     {
         if ($consulta=$GLOBALS['conexion']->query("select * from usuarios where nombre='$usuario'")) {
@@ -89,7 +64,6 @@ class BaseDatos
         }
         return $consulta;
     }
-
     //guardar usuario
     public function gurdar_usuario($nombre, $correo, $password, $sexo, $tipo)
     {
@@ -138,7 +112,7 @@ class BaseDatos
         return $consulta; //retorna consulta para imprimir en html
     }
 
-
+   
     //guardar comentarios
     public function guardar_comentarios($id_usuario, $id_articulo, $comentario)
     {
@@ -178,18 +152,6 @@ class BaseDatos
     }
 
     //---------------------------------------------- seccion articulos favoritos -------------------------------------------------------
-    public function reporteFavoritos()
-    {
-         if ($consulta = $GLOBALS['conexion']->query("select * from artfavoritos")) {
-             //echo "éxito consulta";
-
-
-        } else {
-            echo "Error consulta";
-        }
-         return $consulta; //retorna consulta para imprimir en html
-    }
-    
     //mostrar articulos favoritos por usuario
     public function consulta_artFavoritos($id_usuario)
     {
@@ -214,32 +176,8 @@ class BaseDatos
         }
         return $consulta; //retorna los id's de los articulos favoritos por usuario
     }
-	
-	public function consulta_todoDeArticulos($id_articulo){
-        if ($consulta = $GLOBALS['conexion']->query("select * FROM articulos WHERE id='$id_articulo'")) {
-        } else {
-        }
-        return $consulta; //retorna los todo de los articulos
-    }
 
-	public function consulta_nombreArticulo($titulo_articulo){
-		if ($consulta = $GLOBALS['conexion']->query("SELECT * FROM articulos WHERE titulo='$titulo_articulo'")) {
-        } else {
-			echo "si se pudo";
-        }
-        return $consulta; //retorna los nombres de los articulos
-	}
     
-	public function buscar_tituloArticulo($palabraClave){
-		$consulta = $GLOBALS['conexion']->query("SELECT * FROM `articulos` WHERE titulo LIKE '%$palabraClave%'");
-        return $consulta; //retorna los nombres de los articulos
-	}
-
-	public function contar_favoritos($idArticulo){
-		$consulta = $GLOBALS['conexion']->query("SELECT COUNT(idArticulo) FROM artfavoritos WHERE idArticulo=$idArticulo");
-		return $consulta;
-	}
-
     //guardar articulos favoritos
     public function agregar_articulo($id_usuario, $id_articulo)
     {
@@ -252,16 +190,13 @@ class BaseDatos
             echo $ex;
         }
     }
-
     //borrra articulo de favoritos
     public function borrar_artFavorito($id_usuario, $id_articulo)
     {
-		try{
-			$GLOBALS['conexion']->query("delete from artFavoritos where idUsuario='$id_usuario' and idArticulo= '$id_articulo'");
-        } catch (mysqli_sqlexception $ex) {
-            echo ex;
+        if ($GLOBALS['conexion']->query("delete from artFavoritos where  idUsuario='$id_usuario' and idArticulo= '$id_articulo'")) {
+            echo "articulo favorito borrado con exito";
+        } else {
+            echo "error al borrar articulo favorito";
         }
     }
-
-  
 }
