@@ -185,7 +185,7 @@ class BaseDatos
     //---------------------------------------------- seccion articulos favoritos -------------------------------------------------------
     public function reporteFavoritos()
     {
-         if ($consulta = $GLOBALS['conexion']->query("SELECT artFavoritos.id, usuarios.nombre, usuarios.correo, usuarios.sexo, usuarios.tipo, articulos.titulo FROM artFavoritos JOIN usuarios ON usuarios.id = artFavoritos.idUsuario JOIN articulos ON artFavoritos.idArticulo = articulos.id;")) {
+        if ($consulta = $GLOBALS['conexion']->query(" SELECT artFavoritos.id, articulos.titulo, usuarios.correo, usuarios.nombre  FROM artFavoritos JOIN usuarios ON usuarios.id = artFavoritos.idUsuario JOIN articulos ON artFavoritos.idArticulo = articulos.id;")) {
              //echo "éxito consulta";
 
 
