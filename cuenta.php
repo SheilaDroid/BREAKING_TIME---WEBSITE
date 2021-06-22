@@ -111,7 +111,8 @@ while ($registro = $GLOBALS['consulta']->fetch_assoc()) {
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body tamano">
-                        <!--CODIGO DE REPORTE-->
+                        <!--CODIGO DE REPORTES ARTICULOS, USUARIOS Y FAVORITOS-->
+                        
                         <form action="">
                             <div class="d-grid gap-2 col-3 mx-auto mt-5">
 								<label class="text-center" for="">Reporte de usuarios</label>
