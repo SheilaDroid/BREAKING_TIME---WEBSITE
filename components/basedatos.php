@@ -89,6 +89,7 @@ class BaseDatos
         }
         return $consulta;
     }
+
     //guardar usuario
     public function gurdar_usuario($nombre, $correo, $password, $sexo, $tipo)
     {
@@ -213,8 +214,32 @@ class BaseDatos
         }
         return $consulta; //retorna los id's de los articulos favoritos por usuario
     }
+	
+	public function consulta_todoDeArticulos($id_articulo){
+        if ($consulta = $GLOBALS['conexion']->query("select * FROM articulos WHERE id='$id_articulo'")) {
+        } else {
+        }
+        return $consulta; //retorna los todo de los articulos
+    }
 
+	public function consulta_nombreArticulo($titulo_articulo){
+		if ($consulta = $GLOBALS['conexion']->query("SELECT * FROM articulos WHERE titulo='$titulo_articulo'")) {
+        } else {
+			echo "si se pudo";
+        }
+        return $consulta; //retorna los nombres de los articulos
+	}
     
+	public function buscar_tituloArticulo($palabraClave){
+		$consulta = $GLOBALS['conexion']->query("SELECT * FROM `articulos` WHERE titulo LIKE '%$palabraClave%'");
+        return $consulta; //retorna los nombres de los articulos
+	}
+
+	public function contar_favoritos($idArticulo){
+		$consulta = $GLOBALS['conexion']->query("SELECT COUNT(idArticulo) FROM artfavoritos WHERE idArticulo=$idArticulo");
+		return $consulta;
+	}
+
     //guardar articulos favoritos
     public function agregar_articulo($id_usuario, $id_articulo)
     {
@@ -227,13 +252,14 @@ class BaseDatos
             echo $ex;
         }
     }
+
     //borrra articulo de favoritos
     public function borrar_artFavorito($id_usuario, $id_articulo)
     {
-        if ($GLOBALS['conexion']->query("delete from artFavoritos where  idUsuario='$id_usuario' and idArticulo= '$id_articulo'")) {
-            echo "articulo favorito borrado con exito";
-        } else {
-            echo "error al borrar articulo favorito";
+		try{
+			$GLOBALS['conexion']->query("delete from artFavoritos where idUsuario='$id_usuario' and idArticulo= '$id_articulo'");
+        } catch (mysqli_sqlexception $ex) {
+            echo ex;
         }
     }
 

@@ -128,3 +128,26 @@ color: white;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
+.contenedorDeResultado{
+	padding: 1% 3% 1% 3%;
+	margin-bottom: 1%;
+	border-width: 3px;
+	border-style: ridge;
+	box-shadow: 3px 3px #888888;
+}
+
+.aResultado{
+	color: #117864;
+}
+
+.likeh4{
+	min-width: min-content;
+	background-color: #006eff8c;
+	padding: 3%;
+}
+
+.favoritosP{
+	background-color: rgb(255, 183, 50);
+	padding: 3%;
+}

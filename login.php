@@ -39,7 +39,7 @@
 		</div>
 	</section>
 	<div>
-		<h6 class="position-login"><a class="letras-login2" href="sign_upt.php">Registrar</a> | <a href="" class="letras-login2">Olvide mi contrase&ntilde;a</a></h6>
+		<h6 class="position-login"><a class="letras-login2" href="sign_upt.php">Registrar</a> <!--| <a href="" class="letras-login2">Olvide mi contrase&ntilde;a</a>--></h6>
 	</div>
 </body>
 </html>
