@@ -69,7 +69,7 @@
 	</div>
 	<footer id="MENU">
 		<!-- por cada nivel de carpetas poner " ../ " -->
-		<iframe id="frame_info" scrolling="no" src="./info.html"></iframe>
+		<iframe id="frame_info" scrolling="no" src="./info.php"></iframe>
 	</footer>
 </body>
 </html>

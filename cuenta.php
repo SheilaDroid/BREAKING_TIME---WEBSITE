@@ -184,7 +184,7 @@ while ($registro = $consulta->fetch_assoc()) {
 
         <footer id="MENU">
             <!-- por cada nivel de carpetas poner " ../ " -->
-            <iframe id="frame_info2" scrolling="no" src="./components/info.html"></iframe>
+            <iframe id="frame_info2" scrolling="no" src="./components/php.html"></iframe>
         </footer>
 </body>
 

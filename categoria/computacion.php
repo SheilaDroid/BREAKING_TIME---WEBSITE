@@ -174,7 +174,7 @@
 	</section>
 
 	<footer id="MENU">
-		<iframe id="frame_info" scrolling="no" src="../components/info.html"></iframe>
+		<iframe id="frame_info" scrolling="no" src="../components/info.php"></iframe>
 	</footer>
 </body>
 
