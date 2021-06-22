@@ -64,7 +64,6 @@ if(!empty($_GET['usuario'])){
                             <th>SEXO</th>
 							<th></th>
 							<th>TIPO</th>
-                            <th>NO. ARTICULOS</th>
                         </tr>
                     </thead>
 					
@@ -79,7 +78,6 @@ if(!empty($_GET['usuario'])){
                         <td><?php echo $registro['sexo']; ?>
                         <td>
                         <td><?php echo $registro['tipo']; ?>
-                        <td>
                         </tr>
 						<?php }?>
 						</div>
