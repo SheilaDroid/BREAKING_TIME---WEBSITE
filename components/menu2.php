@@ -25,56 +25,50 @@ if (!empty($_GET['usuario'])) {
 </head>
 
 <body>
-    <footer>
-        <!--Barra de Navegación-->
-        <nav class="navbar navbar-expand-lg up ">
-            <div class="container-fluid d-flex justify-content-evenly navega">
-                <a class="navbar-brand" href="../index.php?usuario=<?=$usuario;?>">
-                    <img src="./imagenes/coffee-time.png" width="50" height="50" alt="">
-                </a>
-                <a class="navbar-brand letrasNav" target="_parent" id="principal"
-                    href="../index.php?usuario=<?=$usuario;?>">BREAKING TIME</a>
-                <!--Elementos de la navbar-->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link letrasNav" href="../categoria/videojuegos.php?usuario=<?=$usuario;?>"
-                                target="_parent">Videojuegos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link letrasNav" href="../categoria/hacking.php?usuario=<?=$usuario;?> "
-                                target="_parent">Hacking</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link letrasNav" href="../categoria/computacion.php?usuario=<?=$usuario;?>"
-                                target="_parent">Computación</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link letrasNav" href="../categoria/stylelife.php?usuario=<?=$usuario;?>"
-                                target="_parent">Estilo de Vida</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Buscador-->
-                <form class="form-inline buscador d-flex">
-                    <input class="form-control me-2 " type="search" placeholder="Buscar..." aria-label="Search">
-                    <button class="btn btn-info" type="submit">Buscar</button>
-                </form>
-                <ul class="quitar_viñeta">
-                </ul>
-                <?php
-				if (!empty($_GET['usuario']) && $_GET['usuario'] != "sin_usuario") {
-					$usuario = $_GET['usuario'];
-					?>
-                <a href="../cuenta.php?usuario=<?=$usuario;?>" target="_parent"><button
-                        class="boton-user"><?php echo $usuario ?></button></a><?php
-				} else {
-					?>
-                <a href="../login.php" target="_parent"><button class="boton-user">Inicio Sesion</button></a>
-                <?php
-				}
-				?>
-        </nav>
-    </footer>
+	<footer >
+		<!--Barra de Navegación-->
+		<nav class="navbar navbar-expand-lg up ">
+	      <div class="container-fluid d-flex justify-content-evenly navega">
+	        <a class="navbar-brand" href="../index.php?usuario=<?= $usuario;?>">
+	          <img src="./imagenes/coffee-time.png" width="50" height="50" alt="">
+	        </a>
+	        <a class="navbar-brand letrasNav" target="_parent" id="principal" href="../index.php?usuario=<?= $usuario;?>">BREAKING TIME</a>
+	        <!--Elementos de la navbar-->
+	        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	          <ul class="navbar-nav mr-auto">
+	            <li class="nav-item">
+	              <a class="nav-link letrasNav" href="../categoria/videojuegos.php?usuario=<?= $usuario; ?>" target="_parent">Videojuegos</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link letrasNav" href="../categoria/hacking.php?usuario=<?= $usuario; ?> " target="_parent">Hacking</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link letrasNav" href="../categoria/computacion.php?usuario=<?= $usuario; ?>" target="_parent">Computación</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link letrasNav" href="../categoria/stylelife.php?usuario=<?= $usuario; ?>" target="_parent">Estilo de Vida</a>
+	            </li>
+	          </ul>
+	        </div>
+	        <!--Buscador-->
+	        <form class="form-inline buscador d-flex" action="resultadoBusqueda.php?usuario=<?=$usuario;?>" method="POST" target="_parent">
+	          <input class="form-control me-2 " type="search" placeholder="Buscar..." aria-label="Search" name="busquedaInput">
+	          <button class="btn btn-info" type="submit">Buscar</button>
+	        </form>
+	        <ul class="quitar_viñeta">
+	        </ul>
+	        <?php 
+	        	if(!empty($_GET['usuario'])&&$_GET['usuario']!="sin_usuario"){
+	        			$usuario=$_GET['usuario'];
+	        		?>
+	        	<a href="../cuenta.php?usuario=<?= $usuario;?>" target="_parent"><button class="boton-user"><?php echo $usuario ?></button></a><?php  
+	        	}else{
+	        		?>
+	        	<a href="../login.php" target="_parent"><button class="boton-user">Inicio Sesion</button></a>
+	        	<?php
+	        	}
+	        ?>
+	    </nav>
+	</footer>
 </body>
 </html>
