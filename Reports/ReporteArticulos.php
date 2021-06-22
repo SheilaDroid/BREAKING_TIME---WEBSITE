@@ -48,44 +48,40 @@ if(!empty($_GET['usuario'])){
 		<div class="container">
         <div class="row justify-content-center">
             <div class="col-auto mt-5">
-                <table class="table table-Info table-striped table-hove mx-auto d-block">
-                    <thead>
-                        <thead><h1 class="text-center ">Reporte de articulos</h1></thead>
-						<div class="mt-5">
-						<?php while ($registro = $GLOBALS['consulta']->fetch_assoc()) {?>
-                        <tr>
-                            <th>ID</th>
-							<th></th>
-                            <th>TITULO</th>
-							<th></th>
-                            <th>LIKES</th>
-							<th></th>
-                            <th>NOMBRE</th>
-							<th></th>
-                            <th>DIRECCION</th>
-							<th></th>
-                        </tr>
-                    </thead>
-					
-                    <tbody>
-                        <tr>
-                        <td><?php echo $registro['id']; ?>
-                        <td>
-                        <td><?php echo $registro['titulo']; ?>
-                        <td>
-                        <td><?php echo $registro['likes']; ?>
-                        <td>
-                        <td><?php echo $registro['nombre']; ?>
-                        <td>
-                        <td><?php echo $registro['direccion']; ?>
-                        <td>
-                        </tr>
-						<?php }?>
-						</div>
-            
-                    </tbody>
-
-                </table>
+				<h1 class="text-center ">Reporte de articulos</h1>
+				<div class="mt-5">
+					<table class="table table-Info table-striped table-hove mx-auto d-block">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>TITULO</th>
+								<th>LIKES</th>
+								<th>DIRECCION</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<?php while ($registro = $GLOBALS['consulta']->fetch_assoc()) {?>
+							<tr>
+								<td>
+									<?php echo $registro['id']; ?>
+								</td>
+								<td>
+									<?php echo utf8_encode($registro['titulo']);?>
+								</td>
+								<td>
+									<?php echo $registro['likes']; ?>
+								</td>
+								<td>
+									<a href=".././<?=utf8_encode($registro['direccion']);?>">
+										<?php echo utf8_encode($registro['direccion']); ?>
+									</a>
+								</td>
+							</tr>
+							<?php }?>
+						</tbody>
+					</table>
+				</div>
             </div>
         </div>
     </div>
