@@ -83,7 +83,7 @@ if(!empty($_GET['usuario'])){
 
 </body>
 <footer id="MENU"><!-- por cada nivel de carpetas poner " ../ " --> 
-	<iframe id="frame_info" scrolling="no"  src="../components/info.html"></iframe>
+	<iframe id="frame_info" scrolling="no"  src="../components/info.php"></iframe>
 </footer>
 
 </html>
