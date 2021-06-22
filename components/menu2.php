@@ -42,7 +42,7 @@
 	          </ul>
 	        </div>
 	        <!--Buscador-->
-	        <form class="form-inline buscador d-flex" action="resultadoBusqueda.php?usuario=<?= $usuario; ?>" method="POST" target="_parent">
+	        <form class="form-inline buscador d-flex" action="resultadoBusqueda.php?usuario=<?=$usuario;?>" method="POST" target="_parent">
 	          <input class="form-control me-2 " type="search" placeholder="Buscar..." aria-label="Search" name="busquedaInput">
 	          <button class="btn btn-info" type="submit">Buscar</button>
 	        </form>
