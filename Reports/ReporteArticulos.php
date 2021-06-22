@@ -60,6 +60,8 @@ if(!empty($_GET['usuario'])){
 							<th></th>
                             <th>LIKES</th>
 							<th></th>
+                            <th>NOMBRE</th>
+							<th></th>
                             <th>DIRECCION</th>
 							<th></th>
                         </tr>
@@ -72,6 +74,8 @@ if(!empty($_GET['usuario'])){
                         <td><?php echo $registro['titulo']; ?>
                         <td>
                         <td><?php echo $registro['likes']; ?>
+                        <td>
+                        <td><?php echo $registro['nombre']; ?>
                         <td>
                         <td><?php echo $registro['direccion']; ?>
                         <td>

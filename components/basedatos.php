@@ -21,7 +21,7 @@ class BaseDatos
     //---------------------------------------------- seccion calificar articulos -------------------------------------------------------
     public function reporteArticulos()
     {
-         if ($consulta = $GLOBALS['conexion']->query("select * from articulos")) {
+        if ($consulta = $GLOBALS['conexion']->query("SELECT articulos.id, articulos.titulo, articulos.likes, usuarios.nombre, articulos.direccion FROM articulos JOIN usuarios ON articulos.id = usuarios.id")) {
              //echo "éxito consulta";
 
 
@@ -180,7 +180,7 @@ class BaseDatos
     //---------------------------------------------- seccion articulos favoritos -------------------------------------------------------
     public function reporteFavoritos()
     {
-         if ($consulta = $GLOBALS['conexion']->query("select * from artfavoritos")) {
+         if ($consulta = $GLOBALS['conexion']->query("SELECT artFavoritos.id, usuarios.nombre, usuarios.correo, usuarios.sexo, usuarios.tipo, articulos.titulo FROM artFavoritos JOIN usuarios ON usuarios.id = artFavoritos.idUsuario JOIN articulos ON artFavoritos.idArticulo = articulos.id;")) {
              //echo "éxito consulta";
 
 
