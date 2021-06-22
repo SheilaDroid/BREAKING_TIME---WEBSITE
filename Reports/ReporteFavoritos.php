@@ -49,36 +49,34 @@ if(!empty($_GET['usuario'])){
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-auto mt-5">
-                <table class="table table-Info table-striped table-hove mx-auto d-block">
-                    <thead>
-                        <thead><h1 class="text-center ">Reporte de favoritos</h1></thead>
-						<div class="mt-5">
-						<?php while ($registro = $GLOBALS['consulta']->fetch_assoc()) {?>
-                        <tr>
-                            <th>ID</th>
-							<th></th>
-                            <th>ID USUARIO</th>
-							<th></th>
-                            <th>ID ARTICULO</th>
-							<th></th>
-                        </tr>
-                    </thead>
-					
-                    <tbody>
-                        <tr>
-                        <td><?php echo $registro['id']; ?>
-                        <td>
-                        <td><?php echo $registro['idUsuario']; ?>
-                        <td>
-                        <td><?php echo $registro['idArticulo']; ?>
-                        <td>
-                        </tr>
-						<?php }?>
-						</div>
-            
-                    </tbody>
-
-                </table>
+				<h1 class="text-center ">Reporte de favoritos</h1>
+				<div class="mt-5">
+					<table class="table table-Info table-striped table-hove mx-auto d-block">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>ID USUARIO</th>
+								<th>ID ARTICULO</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<?php while ($registro = $GLOBALS['consulta']->fetch_assoc()) {?>
+							<tr>
+								<td>
+								<?php echo $registro['id']; ?>
+								</td>
+								<td>
+									<?php echo $registro['idUsuario']; ?>
+								</td>
+								<td>
+									<?php echo $registro['idArticulo']; ?>
+								</td>
+							</tr>
+							<?php }?>
+						</tbody>
+					</table>
+				</div>
             </div>
         </div>
     </div>
