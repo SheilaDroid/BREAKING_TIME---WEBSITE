@@ -242,6 +242,18 @@ while ($registro = $consulta->fetch_assoc()) {
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body tamano">
                             <!--CODIGO DE REPORTE-->
+                            <form action="">
+                            <div class="d-grid gap-2 col-3 mx-auto mt-5">
+								<label class="text-center" for="">Reporte de usuarios</label>
+                                <button onclick="location.href='Reports/ReporteUsuarios.php?usuario=<?=$usuario;?>'" class="btn btn-success mb-4" type="button">Generar reporte</button>
+						
+								<label class="text-center" for="">Reporte de articulos</label>
+                                <button onclick="location.href='Reports/ReporteArticulos.php?usuario=<?=$usuario;?>'" class="btn btn-warning  mb-4" type="button">Generar reporte</button>
+
+								<label class="text-center" for="">Reporte de favoritos</label>
+								<button onclick="location.href='Reports/ReporteFavoritos.php?usuario=<?=$usuario;?>'" class="btn btn-primary  mb-4" type="button">Generar reporte</button>
+                            </div>
+                        </form>
                         </div>
                     </div>
                 </div>
